@@ -87,7 +87,7 @@ export const StackedCards = () => {
     },[cardStack])
 
     return(
-        <div ref={constraintsRef} className="relative  w-[90%] md:w-[80%] h-[55vh] md:h-96 mx-auto mt-20 ">
+        <div ref={constraintsRef} className="relative  w-[90%] md:w-[80%] h-[60vh] md:h-96 mx-auto mt-20 ">
             {
                 cardStack.map((card:CardStackProps,index:number) => {
                     const isTop = index === 0;
