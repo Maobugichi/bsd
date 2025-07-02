@@ -9,7 +9,7 @@ import { Footer } from "./footer"
 
 export const LandingPage = () => {
     return(
-        <main className=" h-fit overflow-hidden">
+        <main className="font-montserrat h-fit overflow-hidden">
             <LandingNav/>
             <Hero/>
             <About/>

@@ -5,7 +5,7 @@ import { FeatureCard } from "./featureCard";
 
 export const Feature = () => {
   return (
-    <section className=" bg-yellow-200 mt-20 md:mt-0 h-[230vh] md:h-[130vh] font-inter flex flex-col gap-5 text-black  text-center">
+    <section className=" font-montserrat mt-20 md:mt-0 h-[230vh] md:h-[130vh] font-inter flex flex-col gap-5 text-black  text-center">
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -25,7 +25,7 @@ export const Feature = () => {
       
       >
         <Paragraph
-          className="font-inter text-sm w-[90%] md:text-lg md:w-[70%] mx-auto "
+          className="font-roboto text-sm w-[90%] md:text-lg md:w-[70%] mx-auto "
           content={
             <>
               Whether you're improving your home, optimizing a workspace, or starting small-scale developments, our light construction services make it simple. No need for a large crew or complex planning — we handle renovations, fittings, drywall, partitions, finishes, and more. Quick setup, quality results, and the flexibility to build exactly what you need, when you need it.

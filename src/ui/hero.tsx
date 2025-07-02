@@ -13,10 +13,10 @@ export const Hero = () => {
             </div>
             <div className=" md:w-[70%] relative z-20 text-white h-1/2 md:h-[70%] grid mx-auto place-items-center gap-5 ">
                 <span>Build Your Dream</span>
-                <Header level={1} className=" text-4xl md:text-5xl font-bold  text-center">
+                <Header level={1} className="font-montserrat text-3xl w-[90%] md:text-5xl font-bold  text-center">
                     Our Vision Got Bigger<br/> So Did Our Blueprint for the Future.
                 </Header>
-                <Paragraph content="We are a global construction company dedicated to turning your imagination into reality. From concept to completion, we bring bold ideas to life with precision, innovation, and craftsmanship no matter where in the world you are" className="text-sm md:text-lg text-center"/>
+                <Paragraph content="We are a global construction company dedicated to turning your imagination into reality. From concept to completion, we bring bold ideas to life with precision, innovation, and craftsmanship no matter where in the world you are" className="font-roboto text-sm md:text-lg text-center"/>
                 <Cta/>
             </div>
         </section>

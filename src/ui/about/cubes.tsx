@@ -14,7 +14,7 @@ export const CompanyHighlights = () => {
              <div className="w-10 grid place-items-center border-2 rounded-full h-10 place-self-end shadow"> <Icon className="" /></div>
               <h3 className="text-lg font-semibold text-gray-800 ">{item.header}</h3>
             </div>
-            <p className="text-sm text-gray-600">{item.desc}</p>
+            <p className="text-sm font-roboto text-gray-600">{item.desc}</p>
           </div>
         );
       })}
