@@ -1,0 +1,17 @@
+import { Header } from "../components/header"
+
+import Carousel from "./swiper"
+
+export const Gallery = () => {
+    return(
+        <section className="  h-[50vh] md:h-[100vh] ">
+          <div className="w-[90%] md:w-[85%] mx-auto mt-10  h-full flex flex-col gap-2 md:grid place-items-center">
+            <span>Gallery</span>
+            <Header level={2} className=" text-4xl font-semibold">
+                Our Latest Works
+            </Header>
+            <Carousel/>
+         </div>
+        </section>
+    )
+}
