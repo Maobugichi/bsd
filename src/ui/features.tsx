@@ -5,7 +5,7 @@ import { FeatureCard } from "./featureCard";
 
 export const Feature = () => {
   return (
-    <section className="mt-20 md:mt-0 h-[250vh] md:h-[130vh] font-inter flex flex-col gap-5 text-black  text-center">
+    <section className=" bg-yellow-200 mt-20 md:mt-0 h-[230vh] md:h-[130vh] font-inter flex flex-col gap-5 text-black  text-center">
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
