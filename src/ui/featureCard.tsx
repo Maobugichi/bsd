@@ -93,7 +93,7 @@ export const FeatureCard:React.FC<FeatureCardProps> = ({}) => {
 
 
     return(
-        <div className="grid font-poppins grid-cols-2 md:grid-cols-6 h-fit  gap-2 w-[85%] p-2 mx-auto">
+        <div className="grid font-poppins grid-cols-2 md:grid-cols-6 h-fit  gap-2 w-[95%] p-2 mx-auto">
           {
             services.map((feature:{className:string, children:React.ReactNode}) => <Card className={`${feature.className} text-left shadow-sm rounded-md`}>{feature.children}</Card>)
           }

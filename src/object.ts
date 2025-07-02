@@ -25,17 +25,17 @@ export const icons:Record<IconKey, React.FC<React.SVGProps<SVGSVGElement>>> = {
  
  export const buttons = [
             {
-                className:'bg-black text-white w-42 text-lg h-15 rounded-sm -left-10 relative md:-right-14 z-20  border-solid',
+                className:'bg-black text-white w-42 text-lg h-15 rounded-sm -left-10 relative md:left-10 z-20  border-solid',
                 content:'Our Services',
                 variants: { hover: { x: -8, y: -8 } }
             },
             {
-                className:'bg-[#D5D4F9] w-42 text-lg h-15 rounded-sm -left-10 md:-right-14 -top-15 relative border border-solid border-black z-15',
+                className:'bg-[#D5D4F9] w-42 text-lg h-15 rounded-sm -left-10 md:left-10 -top-15 relative border border-solid border-black z-15',
                 content:'',
                 variants: { hover: { x: 2, y: 2 } }
             },
             {
-                className:'bg-[#F4F6F8] w-42 text-lg h-15 rounded-sm -left-10  md:-right-14 relative -top-31 border border-solid border-black z-10',
+                className:'bg-[#F4F6F8] w-42 text-lg h-15 rounded-sm -left-10  md:left-10 relative -top-31 border border-solid border-black z-10',
                 content:'',
                 variants: { hover: { x: 10, y: 10 } }
             },
