@@ -3,14 +3,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import slide1 from "../assets/bsd-3.png"
 import slide2 from "../assets/bsd-4.png"
-import slide3 from "../assets/bsd-5.png"
-import slide4 from "../assets/bsd-6.png"
-import slide5 from "../assets/bsd-7.png"
-import slide6 from "../assets/bsd-8.png"
-import slide7 from "../assets/bsd-9.png"
-import slide8 from "../assets/bsd-0.png"
-import slide9 from "../assets/bsd-11.png"
-import slide0 from "../assets/bsd-12.png"
+
 
 
 const Carousel = () => {

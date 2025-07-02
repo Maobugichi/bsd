@@ -1,7 +1,7 @@
 import { Logo } from "../components/logo"
 import { ListItem } from "./landingNavItem"
 import { NavButton } from "./navButton"
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 
 
 export const LandingNav = () => {
