@@ -5,7 +5,7 @@ import { FeatureCard } from "./featureCard";
 import { forwardRef } from "react";
 export const Feature = forwardRef<HTMLElement>((_props,ref) => {
   return (
-    <section ref={ref} className="  font-montserrat mt-20 md:mt-0 h-fit md:h-[130vh] font-inter flex flex-col gap-5 text-black  text-center">
+    <section ref={ref} className="  font-montserrat mt-20 md:mt-0 h-fit  font-inter flex flex-col gap-5 text-black  text-center">
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
