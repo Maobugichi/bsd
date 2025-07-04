@@ -1,13 +1,16 @@
 import { Header } from "../components/header"
 import { Paragraph } from "../components/paragraph"
 import { Cta } from "./heroCta"
+import React , {forwardRef} from "react"
 import background from "../assets/bsd-1.jpg"
 
-export const Hero = () => {
+export const Hero = forwardRef<HTMLElement>((_props, ref) => {
     return(
         <section 
-        style={{backgroundImage:`url(${background})`, backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}}
-        className="h-[90vh] grid relative place-items-center  mt-20">
+         ref={ref}
+         tabIndex={0}
+         style={{backgroundImage:`url(${background})`, backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}}
+         className="h-[90vh] grid relative place-items-center  mt-20">
             <div className="bg-black/60 h-full w-full absolute">
 
             </div>
@@ -21,4 +24,4 @@ export const Hero = () => {
             </div>
         </section>
     )
-}
+})

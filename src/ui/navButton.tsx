@@ -4,7 +4,7 @@ export const NavButton = () => {
     const details = [
         {
             content:'Contact Us',
-            className:'rounded-4xl bg-black w-[40%] h-[60%]'
+            className:'rounded-4xl bg-black w-[40%] text-sm h-[60%]'
         },
         {
             content:'Quote',

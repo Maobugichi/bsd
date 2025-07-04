@@ -25,8 +25,8 @@ export const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">Get in Touch</h3>
           <ul className="space-y-2 text-sm">
-            <li>Email: <a href="mailto:info@example.com" className="hover:text-white transition">info@example.com</a></li>
-            <li>Phone: +123 456 7890</li>
+            <li>Email: <a href="mailto:info@example.com" className="hover:text-white transition">info@bsdlight.com</a></li>
+            <li>Phone: 07018373588</li>
             <li>Location: Lagos, Nigeria</li>
           </ul>
         </div>

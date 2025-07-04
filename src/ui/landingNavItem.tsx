@@ -1,10 +1,36 @@
-import { List } from "../components/list"
+import type { RefObject } from "react";
 
-export const ListItem = () => {
-    const listItems = ['Home' , 'Projects' ,'Services','About']
+interface ListItemProps {
+  scrollToSection: (ref: RefObject<HTMLElement>) => void;
+  refs: {
+    heroRef: RefObject<HTMLElement>;
+    aboutRef: RefObject<HTMLElement>;
+    featureRef: RefObject<HTMLElement>;
+    galleryRef: RefObject<HTMLElement>;
+    testimonialRef: RefObject<HTMLElement>;
+    faqRef: RefObject<HTMLElement>;
+    //footerRef: RefObject<HTMLElement>;
+  };
+}
+
+export const ListItem = ({ scrollToSection, refs }: ListItemProps) => {
+   const listItems = [
+  { key: "heroRef", name: "Home" },
+  { key: "galleryRef", name: "Projects" },
+  { key: "featureRef", name: "Services" },
+  { key: "aboutRef", name: "About" },
+];
     return(
-        <ul className="flex md:flex-row flex-col md:h-full h-[40%] mt-20 md:mt-0 text-lg justify-between p-6 md:items-center  md:w-1/2">
-            {listItems.map((item:string) => <List content={item} className=""/>)}
+        <ul className="flex md:flex-row flex-col md:h-full h-[40%]  mt-20 md:mt-0 text-md justify-between p-6 md:items-center  md:w-1/2">
+        {listItems.map((item) => (
+            <li
+            key={item.key}
+            className="cursor-pointer"
+            onClick={() => scrollToSection(refs[item.key as keyof typeof refs])}
+            >
+            {item.name}
+            </li>
+        ))}
         </ul>
     )
 }

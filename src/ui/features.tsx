@@ -2,10 +2,10 @@ import { motion } from "motion/react";
 import { Header } from "../components/header";
 import { Paragraph } from "../components/paragraph";
 import { FeatureCard } from "./featureCard";
-
-export const Feature = () => {
+import { forwardRef } from "react";
+export const Feature = forwardRef<HTMLElement>((_props,ref) => {
   return (
-    <section className=" font-montserrat mt-20 md:mt-0 h-[230vh] md:h-[130vh] font-inter flex flex-col gap-5 text-black  text-center">
+    <section ref={ref} className="  font-montserrat mt-20 md:mt-0 h-fit md:h-[130vh] font-inter flex flex-col gap-5 text-black  text-center">
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -43,4 +43,4 @@ export const Feature = () => {
       </motion.div>
     </section>
   );
-};
+});

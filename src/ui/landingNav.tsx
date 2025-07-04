@@ -4,9 +4,24 @@ import { NavButton } from "./navButton"
 import { Menu , X } from 'lucide-react';
 import { useState } from "react";
 import { motion } from "motion/react";
+import type { RefObject } from "react";
 
 
-export const LandingNav = () => {
+interface LandingNavProps {
+  scrollToSection: (ref: RefObject<HTMLElement>) => void;
+  refs: {
+    heroRef: RefObject<HTMLElement>;
+    aboutRef: RefObject<HTMLElement>;
+    featureRef: RefObject<HTMLElement>;
+    galleryRef: RefObject<HTMLElement>;
+    testimonialRef: RefObject<HTMLElement>;
+    faqRef: RefObject<HTMLElement>;
+    //footerRef: RefObject<HTMLElement>;
+  };
+}
+
+
+export const LandingNav = ({ scrollToSection, refs }: LandingNavProps) => {
     const [ show , setIsShow ] = useState<boolean>(false)
     function showNav() {
         setIsShow(true)
@@ -19,7 +34,7 @@ export const LandingNav = () => {
         <nav className=" font-inter flex items-center p-2 md:p-0 justify-between backdrop-blur-md text-black fixed top-0 z-50 w-full h-20  border-b-1  border-black">
             <Logo/>
             <div className="hidden w-[60%] md:flex gap-5 h-full justify-end-safe">
-             <ListItem/>
+             <ListItem scrollToSection={scrollToSection} refs={refs} />
              <NavButton/>
             </div>
             <div className="md:hidden">
@@ -35,7 +50,7 @@ export const LandingNav = () => {
                    </div>
                    
                    <div className={`h-[85%] mt-8`}>
-                        <ListItem/>
+                        <ListItem scrollToSection={scrollToSection} refs={refs} />
                     </div>
                </motion.nav> }
         </nav>

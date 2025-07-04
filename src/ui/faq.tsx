@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-
+import { forwardRef } from "react";
 const faqs = [
   {
     question: "What services do you offer?",
@@ -24,7 +24,7 @@ const faqs = [
   }
 ];
 
-export const FAQSection = () => {
+export const FAQSection = forwardRef<HTMLElement>((_props,ref) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
@@ -32,7 +32,7 @@ export const FAQSection = () => {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto mt-16 p-4">
+    <section ref={ref} tabIndex={6} className="w-full max-w-3xl mx-auto mt-16 p-4">
       <h2 className="text-3xl font-bold text-center mb-8 text-black">Frequently Asked Questions</h2>
       <div className="space-y-4">
         {faqs.map((faq, index) => (
@@ -54,6 +54,6 @@ export const FAQSection = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
-};
+});
