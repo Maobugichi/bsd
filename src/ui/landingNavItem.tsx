@@ -22,7 +22,7 @@ export const ListItem = ({ scrollToSection, refs, closeNav }: ListItemProps) => 
   { key: "aboutRef", name: "About" },
 ];
     return(
-        <ul className="flex lg:flex-row flex-col md:h-[60%] h-[40%]  mt-20 md:mt-0 text-md justify-between p-6 md:items-center  lg:w-1/2">
+        <ul className="flex lg:flex-row flex-col md:h-[60%] h-[40%]  lg:h-full  mt-20 md:mt-0 text-md justify-between p-6 md:items-center  lg:w-1/2">
         {listItems.map((item) => (
             <li
             key={item.key}
