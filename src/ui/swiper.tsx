@@ -27,7 +27,7 @@ const Carousel = () => {
         loop
         slidesPerView={1}
         spaceBetween={30}
-        className='w-full h-[80%] '
+        className='w-full h-[75%] '
       >
         <SwiperSlide>
           <div className="bg-[#FDEBDD] relative h-full rounded-xl  text-center shadow">
