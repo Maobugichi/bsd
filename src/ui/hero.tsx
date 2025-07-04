@@ -1,7 +1,7 @@
 import { Header } from "../components/header"
 import { Paragraph } from "../components/paragraph"
 import { Cta } from "./heroCta"
-import React , {forwardRef} from "react"
+import  {forwardRef} from "react"
 import background from "../assets/bsd-1.jpg"
 
 export const Hero = forwardRef<HTMLElement>((_props, ref) => {
