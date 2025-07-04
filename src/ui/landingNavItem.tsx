@@ -11,9 +11,10 @@ interface ListItemProps {
     faqRef: RefObject<HTMLElement>;
     //footerRef: RefObject<HTMLElement>;
   };
+  closeNav:() => void
 }
 
-export const ListItem = ({ scrollToSection, refs }: ListItemProps) => {
+export const ListItem = ({ scrollToSection, refs, closeNav }: ListItemProps) => {
    const listItems = [
   { key: "heroRef", name: "Home" },
   { key: "galleryRef", name: "Projects" },
@@ -26,7 +27,10 @@ export const ListItem = ({ scrollToSection, refs }: ListItemProps) => {
             <li
             key={item.key}
             className="cursor-pointer"
-            onClick={() => scrollToSection(refs[item.key as keyof typeof refs])}
+            onClick={() => {
+                scrollToSection(refs[item.key as keyof typeof refs])
+                closeNav()
+            }}
             >
             {item.name}
             </li>

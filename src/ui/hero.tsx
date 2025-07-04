@@ -3,11 +3,19 @@ import { Paragraph } from "../components/paragraph"
 import { Cta } from "./heroCta"
 import  {forwardRef} from "react"
 import background from "../assets/bsd-1.jpg"
+import type { RefObject } from "react";
 
-export const Hero = forwardRef<HTMLElement>((_props, ref) => {
+interface HeroRefs {
+     refs: {
+        heroRef: RefObject<HTMLElement>;
+        featureRef: RefObject<HTMLElement>;
+     }
+}
+
+export const Hero = ({refs}:HeroRefs) => {
     return(
         <section 
-         ref={ref}
+         ref={refs.heroRef}
          tabIndex={0}
          style={{backgroundImage:`url(${background})`, backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}}
          className="h-[90vh] grid relative place-items-center  mt-20">
@@ -20,8 +28,8 @@ export const Hero = forwardRef<HTMLElement>((_props, ref) => {
                     Our Vision Got Bigger<br/> So Did Our Blueprint for the Future.
                 </Header>
                 <Paragraph content="We are a global construction company dedicated to turning your imagination into reality. From concept to completion, we bring bold ideas to life with precision, innovation, and craftsmanship no matter where in the world you are" className="font-roboto text-sm md:text-lg text-center"/>
-                <Cta/>
+                <Cta ref={refs.featureRef}/>
             </div>
         </section>
     )
-})
+}

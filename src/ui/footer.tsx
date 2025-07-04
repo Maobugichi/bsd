@@ -45,7 +45,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className="text-center text-sm text-gray-500 mt-12 border-t border-gray-700 pt-6">
-        © {new Date().getFullYear()} Your Company. All rights reserved.
+        © {new Date().getFullYear()} BSDLight. All rights reserved.
       </div>
     </footer>
   );

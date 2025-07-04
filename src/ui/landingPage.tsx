@@ -1,4 +1,4 @@
-import  { useRef } from 'react';
+import  { useRef, useState } from 'react';
 import { About } from './about/about';
 import { Hero } from './hero';
 import { LandingNav } from './landingNav';
@@ -21,10 +21,11 @@ export const LandingPage = () => {
     ref.current.scrollIntoView({ behavior: 'smooth' });
   };
 
+  //const [ show , setIsShow ] = useState<boolean>(false)
   return (
     <main className="font-montserrat h-fit overflow-hidden">
       <LandingNav scrollToSection={scrollToSection} refs={{ heroRef, aboutRef, featureRef, galleryRef, testimonialRef, faqRef }} />
-      <Hero ref={heroRef} />
+      <Hero refs={{heroRef, featureRef}}/>
       <About ref={aboutRef} />
       <Feature ref={featureRef} />
       <Gallery ref={galleryRef} />
