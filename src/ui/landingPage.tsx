@@ -1,4 +1,4 @@
-import  { useRef, useState } from 'react';
+import  { useRef } from 'react';
 import { About } from './about/about';
 import { Hero } from './hero';
 import { LandingNav } from './landingNav';

@@ -1,7 +1,6 @@
 import { Header } from "../components/header"
 import { Paragraph } from "../components/paragraph"
 import { Cta } from "./heroCta"
-import  {forwardRef} from "react"
 import background from "../assets/bsd-1.jpg"
 import type { RefObject } from "react";
 
