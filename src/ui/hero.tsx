@@ -1,7 +1,6 @@
 import { Header } from "../components/header"
 import { Paragraph } from "../components/paragraph"
 import { Cta } from "./heroCta"
-import background from "../../public/bsd-1.jpg"
 import type { RefObject } from "react";
 
 interface HeroRefs {
@@ -16,7 +15,7 @@ export const Hero = ({refs}:HeroRefs) => {
         <section 
          ref={refs.heroRef}
          tabIndex={0}
-         style={{backgroundImage:`url(${background})`, backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}}
+         style={{backgroundImage:`url(/bsd-1.jpg)`, backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}}
          className="h-[90vh] grid relative place-items-center  mt-20">
             <div className="bg-black/60 h-full w-full absolute">
 
