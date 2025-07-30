@@ -13,7 +13,7 @@ export const Feature = forwardRef<HTMLElement>((_props,ref) => {
       >
         <Header
           level={2}
-          className="w-full mx-auto h-16 text-3xl md:text-4xl font-semibold "
+          className="w-full mx-auto md:h-16 text-3xl md:text-4xl font-semibold "
         >
           Our Services
         </Header>

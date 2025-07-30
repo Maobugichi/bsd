@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { forwardRef } from "react";
+import { motion, AnimatePresence } from "motion/react"; 
+
 const faqs = [
   {
     question: "What services do you offer?",
@@ -24,7 +26,7 @@ const faqs = [
   }
 ];
 
-export const FAQSection = forwardRef<HTMLElement>((_props,ref) => {
+export const FAQSection = forwardRef<HTMLElement>((_props, ref) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
@@ -32,9 +34,9 @@ export const FAQSection = forwardRef<HTMLElement>((_props,ref) => {
   };
 
   return (
-    <section ref={ref} tabIndex={6} className="w-full max-w-3xl mx-auto mt-16 p-4">
+    <section ref={ref} tabIndex={6} className="w-full flex flex-col items-center justify-center h-auto min-h-[80vh] mx-auto mt-16 p-4">
       <h2 className="text-3xl font-bold text-center mb-8 text-black">Frequently Asked Questions</h2>
-      <div className="space-y-4">
+      <div className="space-y-4 w-[95%] mx-auto">
         {faqs.map((faq, index) => (
           <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
             <button
@@ -46,11 +48,22 @@ export const FAQSection = forwardRef<HTMLElement>((_props,ref) => {
                 className={`w-5 h-5 text-gray-600 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}
               />
             </button>
-            {openIndex === index && (
-              <div className="px-6 py-4 bg-white text-gray-700 text-md border-t">
-                {faq.answer}
-              </div>
-            )}
+
+            <AnimatePresence initial={false}>
+              {openIndex === index && (
+                <motion.div
+                  key="content"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 90, opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="px-6 py-4 bg-white text-gray-700 text-md border-t overflow-hidden"
+                >
+                  {faq.answer}
+                </motion.div>
+              )}
+            </AnimatePresence>
+
           </div>
         ))}
       </div>
