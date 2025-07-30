@@ -87,7 +87,7 @@ export const StackedCards = () => {
     },[cardStack])
 
     return(
-        <div ref={constraintsRef} className=" relative  w-[95%] md:w-full h-fit bg-red-400 min-h-[60vh] grid  md:h-96 mx-auto mt-20 ">
+        <div ref={constraintsRef} className=" relative  w-[95%] md:w-full h-fit  min-h-[60vh] grid  md:h-96 mx-auto mt-20 ">
             {
                 cardStack.map((card:CardStackProps,index:number) => {
                     const isTop = index === 0;
@@ -95,7 +95,7 @@ export const StackedCards = () => {
                     return(
                          <motion.div
                             key={card.className}
-                            className={`absolute w-full h-[85%] rounded-2xl shadow-xl cursor-pointer flex items-center justify-center text-xl font-bold ${card.className} ${isTop ? 'opacity-100' : 'opacity-75'}`}
+                            className={`absolute w-full h-[90%] rounded-2xl shadow-xl cursor-pointer flex items-center justify-center text-xl font-bold ${card.className} ${isTop ? 'opacity-100' : 'opacity-75'}`}
                             style={{
                                 zIndex:z,
                                 top:index * -20,

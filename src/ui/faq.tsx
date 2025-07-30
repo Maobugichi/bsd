@@ -35,7 +35,7 @@ export const FAQSection = forwardRef<HTMLElement>((_props, ref) => {
 
   return (
     <section ref={ref} tabIndex={6} className="w-full flex flex-col items-center justify-center h-auto min-h-[50vh] md:min-h-[70vh] mx-auto mt-16 p-4">
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-black">Frequently Asked Questions</h2>
+      <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8 text-black">Frequently Asked Questions</h2>
       <div className="space-y-4 w-[95%] mx-auto">
         {faqs.map((faq, index) => (
           <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
