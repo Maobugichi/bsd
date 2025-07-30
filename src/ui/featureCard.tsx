@@ -33,7 +33,7 @@ export const FeatureCard:React.FC<FeatureCardProps> = ({}) => {
                 <div className="p-4 flex flex-col gap-3">
                     <h1 className="text-xl font-semibold mb-2">M&D Design & Installation</h1>
                     <p className="font-roboto text-[#F5F5F5] tracking-wider leading-7">We provide tailored mechanical and design installations — from layout planning and 3D modeling to HVAC, electrical, and plumbing system integration. Whether it’s a smart office or a custom industrial fit-out, we bring creative solutions and technical precision together to ensure smooth execution, lasting performance, and aesthetic harmony. Every design is engineered for efficiency, compliance, and real-world use, with expert teams managing the entire process seamlessly.</p>
-                    <div className="w-12 h-12 border-[#D4AF37] grid place-items-center border-2 rounded-full  place-self-end">
+                    <div className="w-12 h-12 border-[#D4AF37] grid place-items-center border-2 rounded-full  ">
                     <ToolCaseIcon className="text-[#D4AF37] w-7 h-7" />
                     </div>
                 </div>
