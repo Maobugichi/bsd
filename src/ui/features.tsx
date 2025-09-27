@@ -25,10 +25,10 @@ export const Feature = forwardRef<HTMLElement>((_props,ref) => {
       
       >
         <Paragraph
-          className="font-roboto text-sm w-[90%] md:text-lg md:w-[70%] mx-auto "
+          className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
           content={
             <>
-              Whether you're improving your home, optimizing a workspace, or starting small-scale developments, our light construction services make it simple. No need for a large crew or complex planning — we handle renovations, fittings, drywall, partitions, finishes, and more. Quick setup, quality results, and the flexibility to build exactly what you need, when you need it.
+              Whether you're improving your home, optimizing a workspace, or starting small-scale developments, our light construction services make it simple. No need for a large crew or complex planning  we handle renovations, fittings, drywall, partitions, finishes, and more. Quick setup, quality results, and the flexibility to build exactly what you need, when you need it.
             </>
           }
         />

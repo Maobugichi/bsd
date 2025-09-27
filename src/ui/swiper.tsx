@@ -1,5 +1,3 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import slide1 from "../assets/bsd-3.png"
 import slide2 from "../assets/bsd-4.png"
@@ -16,117 +14,159 @@ import slide12 from "../assets/bsd-14.png"
 
 
 
+import  { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
 const Carousel = () => {
-  return (
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const slides = [
+    { id: 1, image: slide1, bg: '#FDEBDD' },
+    { id: 2, image: slide2, bg: '#DCF0F2' },
+    { id: 3, image: slide3, bg: '#FDEBDD' },
+    { id: 4, image: slide4, bg: '#DCF0F2' },
+    { id: 5, image: slide5, bg: '#FDEBDD' },
+    { id: 6, image: slide6, bg: '#DCF0F2' },
+    { id: 7, image: slide7, bg: '#FDEBDD' },
+    { id: 8, image: slide8, bg: '#DCF0F2' },
+    { id: 9, image: slide9, bg: '#FDEBDD' },
+    { id: 10, image: slide10, bg: '#DCF0F2' },
+    { id: 11, image: slide11, bg: '#FDEBDD' },
+    { id: 12, image: slide12, bg: '#DCF0F2' },
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const goToSlide = (index:number) => {
+    setCurrentSlide(index);
+  };
+
   
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        navigation
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 3000 }}
-        loop
-        slidesPerView={1}
-        spaceBetween={30}
-        className='w-full h-[75%] '
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, currentSlide]);
+
+  const handleMouseEnter = () => setIsAutoPlaying(false);
+  const handleMouseLeave = () => setIsAutoPlaying(true);
+
+  return (
+    <div 
+      className="relative w-full h-[500px] group"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+    
+      <div className="relative w-full h-full overflow-hidden rounded-2xl shadow-xl">
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={`
+              absolute inset-0 transition-all duration-700 ease-in-out
+              ${index === currentSlide 
+                ? 'opacity-100 translate-x-0' 
+                : index < currentSlide 
+                  ? 'opacity-0 -translate-x-full' 
+                  : 'opacity-0 translate-x-full'
+              }
+            `}
+            style={{ backgroundColor: slide.bg }}
+          >
+           
+            <div className="absolute inset-0 bg-black/20 z-10 rounded-2xl" />
+            
+          
+            <img
+              src={slide.image}
+              alt={`Construction project ${slide.id}`}
+              className="w-full h-full object-cover rounded-2xl"
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
+
+     
+      <button
+        onClick={prevSlide}
+        className="
+          absolute left-4 top-1/2 -translate-y-1/2 z-20
+          w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full
+          flex items-center justify-center
+          transition-all duration-300 ease-out
+          opacity-0 group-hover:opacity-100
+          hover:bg-white hover:scale-110 hover:shadow-lg
+          focus:outline-none focus:ring-2 focus:ring-gray-900/20
+        "
+        aria-label="Previous slide"
       >
-        <SwiperSlide>
-          <div className="bg-[#FDEBDD] relative h-full rounded-xl  text-center shadow">
-               <div className='bg-black/20 rounded-xl h-[500px] w-full z-10 absolute'>
-               </div>
-              <img className='h-full w-full object-cover rounded-xl' loading="lazy" src={slide1}/>
-             
-          </div>
-        </SwiperSlide>
+        <ChevronLeft className="w-6 h-6 text-gray-900" />
+      </button>
 
-        <SwiperSlide>
-          <div className="bg-[#DCF0F2] relative h-full rounded-xl text-center shadow">
-             <div className='bg-black/20 rounded-xl h-[500px] w-full z-10 absolute'>
-               </div>
-              <img className='h-full w-full object-fill rounded-xl' loading="lazy" src={slide2}/>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="bg-[#FDEBDD] relative h-full rounded-xl  text-center shadow">
-               <div className='bg-black/20 rounded-xl h-[500px] w-full z-10 absolute'>
-               </div>
-              <img className='h-full w-full object-cover rounded-xl' loading="lazy" src={slide3}/>
-             
-          </div>
-        </SwiperSlide>
+      <button
+        onClick={nextSlide}
+        className="
+          absolute right-4 top-1/2 -translate-y-1/2 z-20
+          w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full
+          flex items-center justify-center
+          transition-all duration-300 ease-out
+          opacity-0 group-hover:opacity-100
+          hover:bg-white hover:scale-110 hover:shadow-lg
+          focus:outline-none focus:ring-2 focus:ring-gray-900/20
+        "
+        aria-label="Next slide"
+      >
+        <ChevronRight className="w-6 h-6 text-gray-900" />
+      </button>
 
-        <SwiperSlide>
-          <div className="bg-[#DCF0F2] relative h-full rounded-xl text-center shadow">
-             <div className='bg-black/20 rounded-xl h-[500px] w-full z-10 absolute'>
-               </div>
-              <img className='h-full w-full object-fill rounded-xl' loading="lazy" src={slide4}/>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="bg-[#FDEBDD] relative h-full rounded-xl  text-center shadow">
-               <div className='bg-black/20 rounded-xl h-[500px] w-full z-10 absolute'>
-               </div>
-              <img className='h-full w-full object-cover rounded-xl' loading="lazy" src={slide5}/>
-             
-          </div>
-        </SwiperSlide>
+    
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`
+              w-2 h-2 rounded-full transition-all duration-300 ease-out
+              focus:outline-none focus:ring-2 focus:ring-white/50
+              ${index === currentSlide
+                ? 'bg-white scale-125 w-8'
+                : 'bg-white/50 hover:bg-white/75'
+              }
+            `}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
 
-        <SwiperSlide>
-          <div className="bg-[#DCF0F2] relative h-full rounded-xl text-center shadow">
-             <div className='bg-black/20 rounded-xl h-[500px] w-full z-10 absolute'>
-               </div>
-              <img className='h-full w-full object-fill rounded-xl' loading="lazy" src={slide6}/>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="bg-[#FDEBDD] relative h-full rounded-xl  text-center shadow">
-               <div className='bg-black/20 rounded-xl h-[500px] w-full z-10 absolute'>
-               </div>
-              <img className='h-full w-full object-cover rounded-xl' loading="lazy" src={slide7}/>
-             
-          </div>
-        </SwiperSlide>
+     
+      <div className="absolute top-6 right-6 z-20 bg-black/30 backdrop-blur-sm rounded-full px-3 py-1">
+        <span className="text-white text-sm font-medium">
+          {currentSlide + 1} / {slides.length}
+        </span>
+      </div>
 
-        <SwiperSlide>
-          <div className="bg-[#DCF0F2] relative h-full rounded-xl text-center shadow">
-             <div className='bg-black/20 rounded-xl h-[500px] w-full z-10 absolute'>
-               </div>
-              <img className='h-full w-full object-fill rounded-xl' loading="lazy" src={slide8}/>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="bg-[#FDEBDD] relative h-full rounded-xl  text-center shadow">
-               <div className='bg-black/20 rounded-xl h-[500px] w-full z-10 absolute'>
-               </div>
-              <img className='h-full w-full object-cover rounded-xl' loading="lazy" src={slide9}/>
-             
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <div className="bg-[#DCF0F2] relative h-full rounded-xl text-center shadow">
-             <div className='bg-black/20 rounded-xl h-[500px] w-full z-10 absolute'>
-               </div>
-              <img className='h-full w-full object-fill rounded-xl' loading="lazy" src={slide10}/>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="bg-[#FDEBDD] relative h-full rounded-xl  text-center shadow">
-               <div className='bg-black/20 rounded-xl h-[500px] w-full z-10 absolute'>
-               </div>
-              <img className='h-full w-full object-cover rounded-xl' loading="lazy" src={slide11}/>
-             
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <div className="bg-[#DCF0F2] relative h-full rounded-xl text-center shadow">
-             <div className='bg-black/20 rounded-xl h-[500px] w-full z-10 absolute'>
-               </div>
-              <img className='h-full w-full object-fill rounded-xl' loading="lazy" src={slide12}/>
-          </div>
-        </SwiperSlide>
-      </Swiper>
+     
+      <div className="absolute top-6 left-6 z-20">
+        <div className={`
+          w-2 h-2 rounded-full transition-all duration-300
+          ${isAutoPlaying ? 'bg-green-400 animate-pulse' : 'bg-gray-400'}
+        `} />
+      </div>
+    </div>
   );
 };
+
 
 export default Carousel;

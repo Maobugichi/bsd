@@ -7,6 +7,7 @@ import { Gallery } from './gallery';
 import { Testimonial } from './testimonial';
 import { FAQSection } from './faq';
 import { Footer } from './footer';
+import { CompanyHighlights } from './highlights';
 
 export const LandingPage = () => {
   const heroRef = useRef(null);
@@ -21,13 +22,15 @@ export const LandingPage = () => {
     ref.current.scrollIntoView({ behavior: 'smooth' });
   };
 
-  //const [ show , setIsShow ] = useState<boolean>(false)
+ 
   return (
     <main className="font-montserrat h-fit overflow-hidden">
       <LandingNav scrollToSection={scrollToSection} refs={{ heroRef, aboutRef, featureRef, galleryRef, testimonialRef, faqRef }} />
       <Hero refs={{heroRef, featureRef}}/>
+     
       <About ref={aboutRef} />
       <Feature ref={featureRef} />
+      <CompanyHighlights/>
       <Gallery ref={galleryRef} />
       <Testimonial ref={testimonialRef} />
       <FAQSection ref={faqRef} />
