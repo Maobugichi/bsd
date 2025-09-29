@@ -131,7 +131,7 @@ const colorVariants = {
 
 export const CompanyHighlights = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  console.log(hoveredCard)
+   console.log(hoveredCard)
   return (
     <div className="max-w-7xl mx-auto px-6 py-16">
     
@@ -143,12 +143,12 @@ export const CompanyHighlights = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
           Why Choose Our Expertise
         </h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-md md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
           Discover the numbers and qualities that make us the trusted partner for your construction and design needs.
         </p>
       </div>
 
-      {/* Highlights Grid */}
+    
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {companyHighlights.map((item, i:number) => {
           const Icon = icons[item.icon];
@@ -224,12 +224,15 @@ export const CompanyHighlights = () => {
         })}
       </div>
 
-      {/* Bottom CTA */}
+      
       <div className="text-center mt-16">
-        <div className="inline-flex items-center gap-3 bg-gray-900 text-white rounded-2xl px-8 py-4 transition-all duration-300 hover:bg-gray-800 hover:scale-105 cursor-pointer group">
+        <a 
+          href="mailto:info@bsdlight.com?subject=Project Inquiry&body=Hello, I would like to discuss a project."
+          className="inline-flex items-center gap-3 bg-gray-900 text-white rounded-2xl px-8 py-4 transition-all duration-300 hover:bg-gray-800 hover:scale-105 cursor-pointer group"
+        >
           <span className="font-semibold">Ready to start your project?</span>
           <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-        </div>
+        </a>
       </div>
     </div>
   );

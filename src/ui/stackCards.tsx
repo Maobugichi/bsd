@@ -134,7 +134,7 @@ export const StackedCards = () => {
     setIsAutoPlaying(!isAutoPlaying);
   };
 
-  // Drag handlers
+ 
   const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
     setIsDragging(true);
     setIsAutoPlaying(false);
@@ -152,7 +152,7 @@ export const StackedCards = () => {
     if (!isDragging) return;
     setIsDragging(false);
     
-    // If dragged more than 100px, move card
+   
     if (Math.abs(dragOffset) > 100) {
       if (dragOffset > 0) {
         moveToPrevious();
@@ -230,10 +230,10 @@ export const StackedCards = () => {
             >
               {card.children}
 
-              {/* Subtle gradient overlay for depth */}
+           
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl pointer-events-none" />
               
-              {/* Drag indicator for top card */}
+            
               {isTop && (
                 <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-white/30 rounded-full" />
               )}
@@ -241,9 +241,9 @@ export const StackedCards = () => {
           );
         })}
 
-        {/* Enhanced Navigation Controls */}
+       
         <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 flex items-center gap-3 bg-white/90 backdrop-blur-md rounded-2xl px-4 py-2 shadow-lg border border-gray-200">
-          {/* Previous Button */}
+        
           <button
             onClick={moveToPrevious}
             className="w-10 h-10 bg-transparent rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-gray-900 hover:scale-110 group"
@@ -252,7 +252,7 @@ export const StackedCards = () => {
             <ChevronLeft className="w-4 h-4 text-gray-600 group-hover:text-white transition-colors" />
           </button>
 
-          {/* Pagination Dots */}
+        
           <div className="flex gap-1.5">
             {cards.map((_, index) => (
               <button
@@ -276,7 +276,7 @@ export const StackedCards = () => {
             ))}
           </div>
 
-          {/* Auto-play Toggle */}
+        
           <button
             onClick={toggleAutoPlay}
             className="w-10 h-10 bg-transparent rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-gray-900 hover:scale-110 group"
@@ -289,7 +289,7 @@ export const StackedCards = () => {
             )}
           </button>
 
-          {/* Next Button */}
+         
           <button
             onClick={moveToNext}
             className="w-10 h-10 bg-transparent rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-gray-900 hover:scale-110 group"
@@ -299,14 +299,14 @@ export const StackedCards = () => {
           </button>
         </div>
 
-        {/* Card Counter */}
+      
         <div className="absolute top-4 right-4 bg-black/30 backdrop-blur-md rounded-full px-3 py-1 border border-white/20">
           <span className="text-white text-sm font-medium">
             {currentIndex + 1} / {cards.length}
           </span>
         </div>
 
-        {/* Auto-play Indicator */}
+       
         <div className="absolute top-4 left-4">
           <div className={`
             w-2 h-2 rounded-full transition-all duration-300

@@ -47,7 +47,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = () => {
       title: 'Property Development',
       description: 'From design to delivery, we develop high-quality residential and commercial real estate.',
       icon: Building2,
-      gridClass: 'col-span-1 row-span-2',
+      gridClass: 'col-span-2 md:col-span-1 row-span-2',
     },
     
     {
@@ -55,7 +55,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = () => {
       title: 'Refurbishment & Renovation',
       description: 'Upgrade residential or commercial spaces with modern, value-enhancing transformations.',
       icon: Construction,
-      gridClass: 'col-span-1 row-span-2',
+      gridClass: 'col-span-2 md:col-span-1 row-span-2',
     },
   ];
 
