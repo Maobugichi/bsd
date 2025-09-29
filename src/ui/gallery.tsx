@@ -4,8 +4,8 @@ import { forwardRef } from "react"
 
 export const Gallery = forwardRef<HTMLElement>((_props,ref) => {
     return(
-        <section ref={ref} tabIndex={3} className="h-[90vh] lg:h-[100vh] ">
-          <div className="w-[90%] md:w-[95%] mx-auto mt-10  h-full flex flex-col gap-2 md:grid place-items-center">
+        <section ref={ref} tabIndex={3} className="h-[70vh] py-10 lg:h-[100vh] ">
+          <div className="w-[90%] space-y-4 md:w-[95%] mx-auto mt-10  h-full flex flex-col gap-2 md:grid place-items-center">
             <span>Gallery</span>
             <Header level={2} className="text-3xl md:text-4xl font-semibold">
                 Our Latest Works
