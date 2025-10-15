@@ -36,7 +36,7 @@ export const CompanyHighlights = () => {
 
             
              
-              <p className="text-lg tracking-wider font-roboto text-gray-600 leading-relaxed">{item.desc}</p>
+              <p className="text-lg tracking-wider  text-gray-600 leading-relaxed">{item.desc}</p>
 
   
               <div className="absolute bottom-4 right-4 w-2 h-2 rounded-full transition-all duration-300 bg-gray-900 animate-pulse group-hover:scale-150" />
