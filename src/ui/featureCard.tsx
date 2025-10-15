@@ -65,11 +65,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = () => {
     <div ref={containerRef} className="max-w-6xl text-left mx-auto p-6">
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
         {services.map((service, index) => {
-          const Icon = service.icon;
-          
-          // Different animation offsets for variety
-          const baseDelay = index * 0.15;
-          
+          const Icon = service.icon;   
           return (
             <motion.div
               key={service.id}
