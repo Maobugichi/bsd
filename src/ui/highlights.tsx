@@ -143,7 +143,7 @@ export const CompanyHighlights = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
           Why Choose Our Expertise
         </h2>
-        <p className="text-md md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-lg tracking-wider text-gray-600 max-w-3xl mx-auto leading-relaxed">
           Discover the numbers and qualities that make us the trusted partner for your construction and design needs.
         </p>
       </div>
@@ -173,7 +173,7 @@ export const CompanyHighlights = () => {
             
               <div className={`absolute inset-0 ${colors.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               
-              {/* Metric Display */}
+             
               <div className="relative mb-6">
                 <div className="flex items-start justify-between mb-4">
                   <div className={`w-16 h-16 ${colors.iconBg} rounded-2xl flex items-center justify-center transition-all duration-300 shrink-0`}>
@@ -196,7 +196,7 @@ export const CompanyHighlights = () => {
                   {item.header}
                 </h3>
                 
-                <p className="text-gray-600 text-md leading-relaxed mb-6">
+                <p className="text-gray-600 text-lg tracking-wide leading-relaxed mb-6">
                   {item.desc}
                 </p>
 

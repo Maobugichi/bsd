@@ -30,7 +30,7 @@ const cards: CardStackProps[] = [
             <span className="text-xs font-medium text-slate-400 uppercase tracking-wider">Construction & Safety</span>
           </div>
           <h1 className="text-xl md:text-3xl font-semibold mb-3 text-white">Reliable and Transparent</h1>
-          <p className="text-sm md:text-lg leading-relaxed text-slate-300">
+          <p className="text-md tracking-wide md:text-lg tracking-wider leading-relaxed text-slate-300">
             "From the very beginning, the team showed outstanding transparency, professionalism, and responsiveness. Every phase of our warehouse expansion was managed with care and precision. They communicated clearly, met deadlines, and avoided cost overruns — a rare feat. Their commitment to safety and quality stood out, consistently meeting and exceeding standards."
           </p>
         </div>
@@ -59,7 +59,7 @@ const cards: CardStackProps[] = [
             <span className="text-xs font-medium text-slate-400 uppercase tracking-wider">MEP & Design</span>
           </div>
           <h1 className="text-xl md:text-3xl font-semibold mb-3 text-white">Exceptional Quality & Design</h1>
-          <p className="text-sm md:text-lg leading-relaxed text-slate-300">
+          <p className="text-md md:text-lg tracking-wide leading-relaxed text-slate-300">
             "They transformed our outdated office into a sleek, modern environment that is both visually impressive and highly functional. From HVAC and acoustics to lighting and layout, every detail was thoughtfully executed with a balance of creativity and technical expertise. Their ability to deliver a polished, performance-driven workspace truly exceeded our expectations."
           </p>
         </div>
@@ -88,7 +88,7 @@ const cards: CardStackProps[] = [
             <span className="text-xs font-medium text-slate-400 uppercase tracking-wider">IT & Technology</span>
           </div>
           <h1 className="text-xl md:text-3xl font-semibold mb-3 text-white">Tech-Forward Solutions</h1>
-          <p className="text-sm md:text-lg leading-relaxed text-slate-300">
+          <p className="text-md md:text-lg tracking-wide leading-relaxed text-slate-300">
             "They handled our data center cabling and VoIP deployment with impressive precision and efficiency. Every aspect of the infrastructure was planned and executed with care, minimizing downtime and ensuring a smooth transition. Since implementation, our systems have run reliably, and their support team has been both responsive and knowledgeable."
           </p>
         </div>
@@ -114,7 +114,7 @@ export const StackedCards = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [dragStartX, setDragStartX] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
-  const intervalRef = useRef<number | null>(null);
+  const intervalRef = useRef<any>(null);
   const constraintsRef = useRef(null);
 
   const moveToNext = () => {
@@ -198,7 +198,7 @@ export const StackedCards = () => {
           const baseScale = 1 - index * 0.04;
           const baseY = index * -20;
           
-          // Apply drag transform only to top card
+          
           const transform = isTop && isDragging 
             ? `translateX(${dragOffset}px) translateY(${baseY}px) scale(${baseScale})` 
             : `translateY(${baseY}px) scale(${baseScale})`;

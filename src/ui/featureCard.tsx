@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion } from 'framer-motion';
 import {
   Hammer,
   Wrench,
@@ -13,6 +14,8 @@ interface FeatureCardProps {
 }
 
 export const FeatureCard: React.FC<FeatureCardProps> = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const services = [
     {
       id: 'construction',
@@ -38,9 +41,9 @@ export const FeatureCard: React.FC<FeatureCardProps> = () => {
     {
       id: 'import-export',
       title: 'Import, Export & Sales',
-     description: 'From product sourcing to final delivery, we simplify and manage every stage of international trade with reliability and compliance. Our global network enables businesses to expand internationally with confidence, handling customs documentation, logistics coordination, and quality assurance. We specialize in construction materials, industrial equipment, and technology products across multiple markets.',
+      description: 'From product sourcing to final delivery, we simplify and manage every stage of international trade with reliability and compliance. Our global network enables businesses to expand internationally with confidence, handling customs documentation, logistics coordination, and quality assurance. We specialize in construction materials, industrial equipment, and technology products across multiple markets.',
       icon: Globe,
-      gridClass: 'col-span-2 pb-8  row-span-3',
+      gridClass: 'col-span-2 pb-8 row-span-3',
     },
     {
       id: 'property',
@@ -49,7 +52,6 @@ export const FeatureCard: React.FC<FeatureCardProps> = () => {
       icon: Building2,
       gridClass: 'col-span-2 md:col-span-1 row-span-2',
     },
-    
     {
       id: 'renovation',
       title: 'Refurbishment & Renovation',
@@ -60,17 +62,37 @@ export const FeatureCard: React.FC<FeatureCardProps> = () => {
   ];
 
   return (
-    <div className="max-w-6xl text-left mx-auto p-6">
+    <div ref={containerRef} className="max-w-6xl text-left mx-auto p-6">
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
-        {services.map((service) => {
+        {services.map((service, index) => {
           const Icon = service.icon;
           
+          // Different animation offsets for variety
+          const baseDelay = index * 0.15;
+          
           return (
-            <div
+            <motion.div
               key={service.id}
+              initial={{ 
+                opacity: 0, 
+                y: 50,
+              }}
+              whileInView={{ 
+                opacity: 1, 
+                y: 0,
+              }}
+              viewport={{ 
+                once: true,
+                amount: 0.2,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.08,
+                ease: "easeOut",
+              }}
               className={`
                 ${service.gridClass}
-                bg-white  shadow
+                bg-white shadow
                 border border-gray-100 
                 rounded-2xl 
                 px-5 py-7
@@ -81,27 +103,48 @@ export const FeatureCard: React.FC<FeatureCardProps> = () => {
                 flex flex-col
               `}
             >
-            
               <div className="flex items-center justify-between mb-4">
-                <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:bg-gray-900">
+                <motion.div 
+                  className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center transition-colors duration-300 group-hover:bg-gray-900"
+                  whileHover={{ 
+                    rotate: [0, -10, 10, -10, 0],
+                    transition: { duration: 0.5 }
+                  }}
+                >
                   <Icon className="w-6 h-6 text-gray-700 transition-colors duration-300 group-hover:text-white" />
-                </div>
+                </motion.div>
               </div>
 
-             
               <div className="flex-1 flex flex-col">
-                <h3 className="text-md md:text-lg font-bold text-gray-900 mb-3 leading-tight">
+                <motion.h3 
+                  className="text-lg font-bold text-gray-900 mb-3 leading-tight"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, amount: 0.8 }}
+                  transition={{ delay: index * 0.1 + 0.2, duration: 0.6 }}
+                >
                   {service.title}
-                </h3>
+                </motion.h3>
                 
-                <p className="text-md text-gray-600 leading-relaxed ">
+                <motion.p 
+                  className="text-lg leading-wider text-gray-600 leading-relaxed"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: false, amount: 0.8 }}
+                  transition={{ delay: index * 0.1 + 0.4, duration: 0.6 }}
+                >
                   {service.description}
-                </p>
+                </motion.p>
               </div>
 
-              
-              <div className="absolute bottom-4 right-4 w-2 h-2 bg-gray-200 rounded-full transition-all duration-300 group-hover:bg-gray-900 group-hover:scale-150" />
-            </div>
+              <motion.div 
+                className="absolute bottom-4 right-4 w-2 h-2 bg-gray-200 rounded-full transition-colors duration-300 group-hover:bg-gray-900"
+                whileHover={{ 
+                  scale: 8,
+                  transition: { duration: 0.4, ease: "easeOut" }
+                }}
+              />
+            </motion.div>
           );
         })}
       </div>

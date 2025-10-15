@@ -28,7 +28,7 @@ export const CompanyHighlights = () => {
                 </div>
                 
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-gray-900 leading-tight">
+                  <h3 className="text-xl tracking-wider font-bold text-gray-900 leading-tight">
                     {item.header}
                   </h3>
                 </div>
@@ -36,10 +36,10 @@ export const CompanyHighlights = () => {
 
             
              
-              <p className="text-md font-roboto text-gray-600 leading-relaxed">{item.desc}</p>
+              <p className="text-lg tracking-wider font-roboto text-gray-600 leading-relaxed">{item.desc}</p>
 
   
-              <div className="absolute bottom-4 right-4 w-2 h-2 bg-gray-200 rounded-full transition-all duration-300 group-hover:bg-gray-900 group-hover:scale-150" />
+              <div className="absolute bottom-4 right-4 w-2 h-2 rounded-full transition-all duration-300 bg-gray-900 animate-pulse group-hover:scale-150" />
             </div>
           );
         })}

@@ -1,7 +1,10 @@
-import { useState } from "react";
-import { ChevronDown } from "lucide-react";
 import { forwardRef } from "react";
-import { motion, AnimatePresence } from "motion/react"; 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const faqs = [
   {
@@ -27,46 +30,36 @@ const faqs = [
 ];
 
 export const FAQSection = forwardRef<HTMLElement>((_props, ref) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   return (
-    <section ref={ref} tabIndex={6} className="w-full flex flex-col items-center justify-center h-auto min-h-[50vh] md:min-h-[70vh] mx-auto mt-16 p-4">
-      <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8 text-black">Frequently Asked Questions</h2>
-      <div className="space-y-4 w-[95%] mx-auto">
+    <section 
+      ref={ref} 
+      tabIndex={6} 
+      className="w-full flex flex-col items-center justify-center h-auto min-h-[50vh] md:min-h-[70vh] mx-auto mt-16 p-4"
+    >
+      <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8 text-black">
+        Frequently Asked Questions
+      </h2>
+      
+      <Accordion 
+        type="single" 
+        collapsible 
+        className="w-full max-w-3xl mx-auto space-y-4"
+      >
         {faqs.map((faq, index) => (
-          <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
-            <button
-              onClick={() => toggleFAQ(index)}
-              className="w-full flex justify-between items-center px-6 py-4 bg-gray-100 hover:bg-gray-200 focus:outline-none"
-            >
-              <span className="text-sm md:text-lg font-medium text-black">{faq.question}</span>
-              <ChevronDown
-                className={`w-5 h-5 text-gray-600 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}
-              />
-            </button>
-
-            <AnimatePresence initial={false}>
-              {openIndex === index && (
-                <motion.div
-                  key="content"
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 90, opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="px-6 py-4 bg-white text-gray-700 text-md border-t overflow-hidden"
-                >
-                  {faq.answer}
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-          </div>
+          <AccordionItem 
+            key={index} 
+            value={`item-${index}`}
+            className="border border-gray-200 rounded-lg px-2 bg-white"
+          >
+            <AccordionTrigger className="text-left text-sm md:text-lg font-medium text-black hover:no-underline px-4">
+              {faq.question}
+            </AccordionTrigger>
+            <AccordionContent className="text-gray-700 text-sm md:text-base px-4 pb-4">
+              {faq.answer}
+            </AccordionContent>
+          </AccordionItem>
         ))}
-      </div>
+      </Accordion>
     </section>
   );
 });
