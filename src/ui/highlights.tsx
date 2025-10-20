@@ -150,7 +150,7 @@ export const CompanyHighlights = () => {
         <h2 className=" text-3xl text-left md:text-center md:text-4xl font-bold text-gray-900 mb-6">
           Why Choose Our Expertise?
         </h2>
-        <p className="text-left text-lg  md:text-center tracking-wider text-gray-600 w-[50%] max-w-3xl mx-auto leading-relaxed">
+        <p className="text-left text-lg  md:text-center tracking-wider text-gray-600 md:w-[50%]  max-w-3xl mx-auto leading-relaxed">
           Discover the numbers and qualities that make us the trusted partner for your construction and design needs.
         </p>
       </div>
