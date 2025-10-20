@@ -133,9 +133,9 @@ export const CompanyHighlights = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
    console.log(hoveredCard)
   return (
-    <div className="max-w-7xl mx-auto px-6 py-16">
+    <div className="max-w-7xl  mx-auto px-6 py-16">
     
-      <div className="text-center mb-16">
+      <div className="text-center w-[90%] mx-auto mb-16">
         <div className="inline-flex  items-center gap-2  bg-gradient-to-r from-gray-900 to-gray-700 text-white text-sm font-semibold  shadow-lg relative overflow-hidden group  bg-gray-100 rounded-full px-4 py-1  mb-6">
 
           <TrendingUp className="w-4 h-4 text-green-500" />
@@ -147,10 +147,10 @@ export const CompanyHighlights = () => {
             </span>
             </span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-          Why Choose Our Expertise
+        <h2 className=" text-3xl text-left md:text-center md:text-4xl font-bold text-gray-900 mb-6">
+          Why Choose Our Expertise?
         </h2>
-        <p className="text-lg tracking-wider text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-left text-lg  md:text-center tracking-wider text-gray-600 w-[50%] max-w-3xl mx-auto leading-relaxed">
           Discover the numbers and qualities that make us the trusted partner for your construction and design needs.
         </p>
       </div>

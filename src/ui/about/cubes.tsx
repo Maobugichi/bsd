@@ -89,7 +89,7 @@ const colorVariants = {
 
 export default function CompanyHighlights() {
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-16">
+    <div className="w-full  mx-auto px-4 py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {companyHighlights.map((item, i) => {
           const Icon = icons[item.icon];
@@ -106,7 +106,7 @@ export default function CompanyHighlights() {
                 transition-all duration-500 ease-out
                 hover:shadow-2xl hover:shadow-gray-900/10 hover:-translate-y-2
                 cursor-pointer group
-                relative overflow-hidden
+                relative overflow-hidden w-full 
               `}
               
             >

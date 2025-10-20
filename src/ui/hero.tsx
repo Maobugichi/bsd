@@ -16,14 +16,14 @@ export const Hero = ({refs}:HeroRefs) => {
          ref={refs.heroRef}
          tabIndex={0}
          style={{backgroundImage:`url(/bsd-1.jpg)`, backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}}
-         className="h-[100vh] md:h-[140vh] grid relative place-items-center  ">
+         className="h-[130vh] md:h-[140vh] grid relative place-items-center  ">
             <div className="bg-black/60 h-full w-full absolute">
 
             </div>
-            <div className=" md:w-[70%] relative z-20 text-white h-1/2  grid mx-auto place-items-center  gap-5">
+            <div className=" md:w-[70%] mt-10 relative z-20 text-white h-1/2  grid mx-auto place-items-center  gap-5">
                 <Badge/>
                 
-                 <h1 className="font-montserrat leading-14 md:leading-16 tracking-wide text-4xl w-[95%] md:text-5xl font-bold  text-center">
+                 <h1 className="font-montserrat leading-16 md:leading-20 tracking-wide text-4xl w-[90%] md:w-[65%] md:text-5xl font-bold  text-center">
                     <span className="text-white">Our Vision Got </span>
                     <span className="relative inline-block">
                     <span className="relative z-10 bg-gradient-to-r from-gray-300 via-gray-100 to-gray-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">

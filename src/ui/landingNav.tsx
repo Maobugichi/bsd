@@ -44,7 +44,7 @@ export const LandingNav = ({ scrollToSection, refs }: LandingNavProps) => {
 
   return (
     <nav 
-      className="font-inter bg-white/80 flex items-center lg:py-10 lg:px-6 text-base justify-between backdrop-blur-lg text-black fixed top-10 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl rounded-full h-16 border border-gray-200 shadow-lg shadow-black/5"
+      className="font-inter bg-white/80 flex items-center lg:py-10 px-6 text-base justify-between backdrop-blur-lg text-black fixed top-10 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl rounded-full h-16 border border-gray-200 shadow-lg shadow-black/5"
       
     >
       <Logo />

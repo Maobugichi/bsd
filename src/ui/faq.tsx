@@ -34,7 +34,7 @@ export const FAQSection = forwardRef<HTMLElement>((_props, ref) => {
     <section 
       ref={ref} 
       tabIndex={6} 
-      className="w-full flex flex-col items-center justify-center h-auto min-h-[50vh] md:min-h-[70vh] mx-auto mt-16 p-4"
+      className=" flex flex-col items-center justify-center h-auto min-h-[50vh] md:min-h-[70vh] mx-auto mt-16 py-16 w-[90%]"
     >
       <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8 text-black">
         Frequently Asked Questions

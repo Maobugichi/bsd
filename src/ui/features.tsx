@@ -10,10 +10,11 @@ export const Feature = forwardRef<HTMLElement>((_props,ref) => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, type: 'spring', stiffness: 300, damping: 25 }}
+        className=""
       >
         <Header
           level={2}
-          className="w-full mx-auto md:h-16 text-3xl md:text-4xl font-semibold "
+          className="w-[85%] mx-auto md:h-16 text-3xl md:text-4xl font-semibold text-left md:text-center"
         >
           Our Services
         </Header>
@@ -25,7 +26,7 @@ export const Feature = forwardRef<HTMLElement>((_props,ref) => {
       
       >
         <Paragraph
-          className="text-lg tracking-wider w-[95%] text-gray-600 md:max-w-3xl mx-auto leading-relaxed"
+          className="tracking-widest text-left mx-auto md:text-center text-lg  text-gray-600 md:max-w-3xl md:w-[80%] w-[85%]  leading-relaxed"
           content={
             <>
               Whether you're improving your home, optimizing a workspace, or starting small-scale developments, our light construction services make it simple. No need for a large crew or complex planning  we handle renovations, fittings, drywall, partitions, finishes, and more. Quick setup, quality results, and the flexibility to build exactly what you need, when you need it.
