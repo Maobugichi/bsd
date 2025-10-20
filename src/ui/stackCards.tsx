@@ -30,7 +30,7 @@ const cards: CardStackProps[] = [
             <span className="text-xs font-medium text-slate-400 uppercase tracking-wider">Construction & Safety</span>
           </div>
           <h1 className="text-xl md:text-3xl font-semibold mb-3 text-white">Reliable and Transparent</h1>
-          <p className="text-md tracking-wide md:text-lg tracking-wider leading-relaxed text-slate-300">
+          <p className="text-md tracking-wide md:text-lg  leading-relaxed text-slate-300">
             "From the very beginning, the team showed outstanding transparency, professionalism, and responsiveness. Every phase of our warehouse expansion was managed with care and precision. They communicated clearly, met deadlines, and avoided cost overruns — a rare feat. Their commitment to safety and quality stood out, consistently meeting and exceeding standards."
           </p>
         </div>
@@ -185,7 +185,7 @@ export const StackedCards = () => {
   };
 
   return (
-    <div className="relative w-[95%] md:w-full h-fit min-h-[60vh] grid md:h-96 mx-auto mt-20">
+    <div className="relative w-[95%] md:w-full h-fit  min-h-[65vh] grid md:h-96 mx-auto mt-20">
       <div 
         ref={constraintsRef} 
         className="relative w-full h-full"
@@ -207,7 +207,7 @@ export const StackedCards = () => {
             <div
               key={card.id}
               className={`
-                absolute w-full h-[90%] rounded-2xl shadow-xl cursor-pointer
+                absolute w-full h-full  rounded-2xl shadow-xl cursor-pointer
                 ${card.className}
                 border border-white/10
                 transition-all duration-300 ease-out
@@ -242,7 +242,7 @@ export const StackedCards = () => {
         })}
 
        
-        <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 flex items-center gap-3 bg-white/90 backdrop-blur-md rounded-2xl px-4 py-2 shadow-lg border border-gray-200">
+        <div className="absolute -bottom-24 left-1/2 transform -translate-x-1/2 flex items-center gap-3 bg-white/90 backdrop-blur-md rounded-2xl px-4 py-2 shadow-lg border border-gray-200">
         
           <button
             onClick={moveToPrevious}
@@ -307,12 +307,7 @@ export const StackedCards = () => {
         </div>
 
        
-        <div className="absolute top-4 left-4">
-          <div className={`
-            w-2 h-2 rounded-full transition-all duration-300
-            ${isAutoPlaying ? 'bg-green-400 animate-pulse' : 'bg-gray-400'}
-          `} />
-        </div>
+        
       </div>
     </div>
   );

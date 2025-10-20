@@ -136,9 +136,16 @@ export const CompanyHighlights = () => {
     <div className="max-w-7xl mx-auto px-6 py-16">
     
       <div className="text-center mb-16">
-        <div className="inline-flex items-center gap-2 bg-gray-100 rounded-full px-4 py-2 mb-6">
-          <TrendingUp className="w-4 h-4 text-gray-600" />
-          <span className="text-sm font-medium text-gray-700">Company Achievements</span>
+        <div className="inline-flex  items-center gap-2  bg-gradient-to-r from-gray-900 to-gray-700 text-white text-sm font-semibold  shadow-lg relative overflow-hidden group  bg-gray-100 rounded-full px-4 py-1  mb-6">
+
+          <TrendingUp className="w-4 h-4 text-green-500" />
+          <span className="">
+            
+            <span className="relative flex items-center gap-2">
+               
+               Company Achievements
+            </span>
+            </span>
         </div>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
           Why Choose Our Expertise

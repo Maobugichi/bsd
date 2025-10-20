@@ -23,7 +23,7 @@ const faqs = [
       "Yes, we have experience managing international logistics and construction partnerships. Our team is equipped to handle cross-border projects seamlessly."
   },
   {
-    question: "Are your services customizable to specific client needs?",
+    question: "Can your services be customized?",
     answer:
       "Absolutely. Every project is tailored to meet the unique goals, timeline, and budget of our clients. We offer full design-build flexibility."
   }
@@ -51,10 +51,10 @@ export const FAQSection = forwardRef<HTMLElement>((_props, ref) => {
             value={`item-${index}`}
             className="border border-gray-200 rounded-lg px-2 bg-white"
           >
-            <AccordionTrigger className="text-left text-sm md:text-lg font-medium text-black hover:no-underline px-4">
+            <AccordionTrigger className="text-left text-lg font-medium text-black hover:no-underline px-4">
               {faq.question}
             </AccordionTrigger>
-            <AccordionContent className="text-gray-700 text-sm md:text-base px-4 pb-4">
+            <AccordionContent className="text-gray-700 text-md px-4 pb-4">
               {faq.answer}
             </AccordionContent>
           </AccordionItem>

@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Header } from "../components/header";
 import { Paragraph } from "../components/paragraph";
-import { FeatureCard } from "./featureCard";
+import  FeatureCard  from "./featureCard";
 import { forwardRef } from "react";
 export const Feature = forwardRef<HTMLElement>((_props,ref) => {
   return (
