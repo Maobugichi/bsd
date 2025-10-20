@@ -15,7 +15,7 @@ export const Hero = ({refs}:HeroRefs) => {
         <section 
          ref={refs.heroRef}
          tabIndex={0}
-         style={{backgroundImage:`url(https://res.cloudinary.com/dao2a3ib4/image/upload/v1760973515/bsd-1_zuaiyr.jpg)`, backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}}
+         style={{backgroundImage:`url(/bsd-1.jpg)`, backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}}
          className="h-[130vh] md:h-[140vh] grid relative place-items-center  ">
             <div className="bg-black/60 h-full w-full absolute">
 
