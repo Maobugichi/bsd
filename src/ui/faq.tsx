@@ -8,26 +8,28 @@ import {
 
 const faqs = [
   {
-    question: "What services do you offer?",
+    question: "Our Services?",
     answer:
       "We offer a wide range of services including building construction, MEP design and installation, IT infrastructure, import/export logistics, and property development."
   },
   {
-    question: "How do I request a project quote?",
+    question: "Get a Quote?",
     answer:
-      "You can request a quote by contacting us through our website's contact form or by calling our office directly. A project consultant will follow up within 24 hours."
+      "You can request a quote through our website’s contact form or by calling our office. A consultant will respond within 24 hours."
   },
   {
-    question: "Do you work with international clients?",
+    question: "International Clients?",
     answer:
-      "Yes, we have experience managing international logistics and construction partnerships. Our team is equipped to handle cross-border projects seamlessly."
+      "Yes, we have experience managing international logistics and construction projects seamlessly across borders."
   },
   {
-    question: "Can your services be customized?",
+    question: "Custom Services?",
     answer:
-      "Absolutely. Every project is tailored to meet the unique goals, timeline, and budget of our clients. We offer full design-build flexibility."
+      "Absolutely. Every project is tailored to your specific goals, timeline, and budget with full design-build flexibility."
   }
 ];
+
+
 
 export const FAQSection = forwardRef<HTMLElement>((_props, ref) => {
   return (

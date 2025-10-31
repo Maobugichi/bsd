@@ -170,7 +170,7 @@ export default function CompanyHighlights() {
                 </div>
               </div>
 
-              {/* Shine sweep effect */}
+            
               <div className={`
                 absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent
                 transform -skew-x-12 opacity-0 group-hover:opacity-100

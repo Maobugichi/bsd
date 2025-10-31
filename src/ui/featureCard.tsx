@@ -185,12 +185,12 @@ export default function FeatureCard() {
                 cursor-pointer
               `}
             >
-              {/* Hover background overlay */}
+             
               <div
                 className={`absolute inset-0 ${colors.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
               />
 
-              {/* Icon + Metric */}
+             
               <div className="relative mb-4">
                 <div className="flex items-start justify-between">
                   <motion.div
@@ -213,7 +213,7 @@ export default function FeatureCard() {
                 </div>
               </div>
 
-              {/* Content */}
+             
               <div className="relative flex-1 flex flex-col">
                 <h3 className="text-xl text-left font-bold text-gray-900 mb-2 leading-tight">
                   {service.title}
