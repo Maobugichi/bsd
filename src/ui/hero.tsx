@@ -30,7 +30,7 @@ export const Hero = ({refs}:HeroRefs) => {
         <section 
          ref={refs.heroRef}
          tabIndex={0}
-         className="h-screen md:h-[140vh] relative overflow-hidden"
+         className="h-[110vh] md:h-[140vh] relative overflow-hidden"
         >
             <motion.div 
                 className="absolute inset-0 will-change-transform"
