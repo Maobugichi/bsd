@@ -41,25 +41,26 @@ export const FAQSection = forwardRef<HTMLElement>((_props, ref) => {
       </h2>
       
       <Accordion 
-        type="single" 
-        collapsible 
-        className="w-full max-w-3xl mx-auto space-y-4"
-      >
-        {faqs.map((faq, index) => (
-          <AccordionItem 
-            key={index} 
-            value={`item-${index}`}
-            className="border border-gray-200 rounded-lg px-2 bg-white"
-          >
-            <AccordionTrigger className="text-left text-lg font-medium text-black hover:no-underline px-4">
-              {faq.question}
-            </AccordionTrigger>
-            <AccordionContent className="text-gray-700 text-md px-4 pb-4">
-              {faq.answer}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
+  type="single" 
+  collapsible 
+  className="border rounded-3xl mx-auto w-full max-w-3xl"
+>
+  {faqs.map((faq, index) => (
+    <AccordionItem 
+      key={index} 
+      value={`item-${index}`} 
+      className="py-5 px-6 md:px-10"
+    >
+      <AccordionTrigger className="text-[clamp(1.2rem,2.5vw,1.5rem)] md:text-[clamp(1.5rem,2vw,2xl)] [&>svg]:size-6 whitespace-nowrap tracking-wider overflow-hidden text-ellipsis text-left">
+        {faq.question}
+      </AccordionTrigger>
+      <AccordionContent className="tracking-wide text-[clamp(0.9rem,2vw,1.25rem)] md:text-xl">
+        {faq.answer}
+      </AccordionContent>
+    </AccordionItem>
+  ))}
       </Accordion>
+
     </section>
   );
 });

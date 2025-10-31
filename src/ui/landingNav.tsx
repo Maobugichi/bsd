@@ -44,7 +44,7 @@ export const LandingNav = ({ scrollToSection, refs }: LandingNavProps) => {
 
   return (
     <nav 
-      className="font-inter bg-white/80 flex items-center lg:py-10 px-6 text-base justify-between backdrop-blur-lg text-black fixed top-10 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl rounded-full h-16 border border-gray-200 shadow-lg shadow-black/5"
+      className="font-inter overflow-hidden bg-white/80 flex items-center lg:py-10 px-6 text-base justify-between backdrop-blur-lg text-black fixed top-10 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl rounded-full h-16 border border-gray-200 shadow-lg shadow-black/5"
       
     >
       <Logo />
@@ -75,7 +75,7 @@ export const LandingNav = ({ scrollToSection, refs }: LandingNavProps) => {
                     </>
                   )}
                   
-                  {/* Hover Effect */}
+                
                   {!isActive && (
                     <span className="absolute inset-0 bg-gray-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   )}
@@ -89,9 +89,10 @@ export const LandingNav = ({ scrollToSection, refs }: LandingNavProps) => {
         
        
         <button 
-          className="ml-3 text-lg px-6 py-2 rounded-full bg-black text-white font-medium hover:bg-gray-800 transition-all duration-300 hover:scale-105 shadow-lg shadow-black/10"
+          className="ml-3 relative  text-white  text-lg px-6 py-3 rounded-full bg-black  font-medium hover:bg-gray-800 transition-all duration-300 hover:scale-105 shadow-lg shadow-black/10"
         >
-          Contact Us
+                
+         <span className="relative z-10">Contact Us</span> 
         </button>
       </div>
 

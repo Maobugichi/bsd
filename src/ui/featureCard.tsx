@@ -1,3 +1,6 @@
+
+
+import { motion } from 'framer-motion';
 import {
   Hammer,
   Wrench,
@@ -5,7 +8,6 @@ import {
   Globe,
   Building2,
   Construction,
-  ArrowRight,
 } from 'lucide-react';
 
 interface Service {
@@ -23,7 +25,8 @@ const services: Service[] = [
   {
     id: 'construction',
     title: 'Building Construction',
-    description: 'We deliver expert construction and maintenance services, ensuring strong, durable structures with ongoing support for reliability and efficiency',
+    description:
+      'We deliver expert construction and maintenance services, ensuring strong, durable structures with ongoing support for reliability and efficiency',
     icon: Hammer,
     gridClass: 'col-span-2 row-span-2',
     color: 'teal',
@@ -33,7 +36,8 @@ const services: Service[] = [
   {
     id: 'design',
     title: 'M&D Design & Installation',
-    description: 'We provide tailored mechanical and design installations — from layout planning and 3D modeling to HVAC, electrical, and plumbing system integration. Whether it\'s a smart office or a custom industrial fit-out, we bring creative solutions and technical precision together to ensure smooth execution, lasting performance, and aesthetic harmony. Every design is engineered for efficiency, compliance, and real-world use.',
+    description:
+      "We provide tailored mechanical and design installations — from layout planning and 3D modeling to HVAC, electrical, and plumbing system integration. Whether it's a smart office or a custom industrial fit-out, we bring creative solutions and technical precision together to ensure smooth execution, lasting performance, and aesthetic harmony. Every design is engineered for efficiency, compliance, and real-world use.",
     icon: Wrench,
     gridClass: 'col-span-2 row-span-3',
     color: 'indigo',
@@ -43,7 +47,8 @@ const services: Service[] = [
   {
     id: 'it-telecom',
     title: 'IT & Telecom Services',
-    description: 'We offer cloud, VoIP, cybersecurity, and network solutions to keep your business connected, protected, and productive.',
+    description:
+      'We offer cloud, VoIP, cybersecurity, and network solutions to keep your business connected, protected, and productive.',
     icon: Computer,
     gridClass: 'col-span-2 row-span-2',
     color: 'rose',
@@ -53,7 +58,8 @@ const services: Service[] = [
   {
     id: 'import-export',
     title: 'Import & Export',
-    description: 'From product sourcing to final delivery, we simplify and manage every stage of international trade with reliability and compliance. Our global network enables businesses to expand internationally with confidence, handling customs documentation, logistics coordination, and quality assurance. We specialize in construction materials, industrial equipment, and technology products across multiple markets.',
+    description:
+      'From product sourcing to final delivery, we simplify and manage every stage of international trade with reliability and compliance. Our global network enables businesses to expand internationally with confidence, handling customs documentation, logistics coordination, and quality assurance. We specialize in construction materials, industrial equipment, and technology products across multiple markets.',
     icon: Globe,
     gridClass: 'col-span-2 row-span-3',
     color: 'amber',
@@ -63,7 +69,8 @@ const services: Service[] = [
   {
     id: 'property',
     title: 'Property Development',
-    description: 'High-quality residential and commercial real estate from design to delivery.',
+    description:
+      'High-quality residential and commercial real estate from design to delivery.',
     icon: Building2,
     gridClass: 'col-span-2 md:col-span-1 row-span-2',
     color: 'emerald',
@@ -73,7 +80,8 @@ const services: Service[] = [
   {
     id: 'renovation',
     title: 'Refurbishment',
-    description: 'Modern, value-enhancing transformations for residential and commercial spaces.',
+    description:
+      'Modern, value-enhancing transformations for residential and commercial spaces.',
     icon: Construction,
     gridClass: 'col-span-2 md:col-span-1 row-span-2',
     color: 'violet',
@@ -127,48 +135,73 @@ const colorVariants = {
   },
 };
 
-export default function FeatureCard() {
-  
 
+const cardVariants: Record<string, any> = {
+  hidden: { opacity: 0, y: 100, scale: 0.98 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      delay: i * 0.15,
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1], 
+    },
+  }),
+  hover: {
+    scale: 1.02,
+    y: -5,
+    boxShadow: '0px 12px 25px rgba(0,0,0,0.1)',
+    transition: { duration: 0.3, ease: 'easeOut' },
+  },
+};
+
+
+export default function FeatureCard() {
   return (
     <div className="max-w-6xl mx-auto p-6">
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
-        {services.map((service) => {
+      <motion.div
+        className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {services.map((service, i) => {
           const Icon = service.icon;
           const colors = colorVariants[service.color];
 
           return (
-            <div
+            <motion.div
               key={service.id}
+              custom={i}
+              variants={cardVariants}
+              whileHover="hover"
               className={`
                 ${service.gridClass}
-                bg-white 
-                border border-gray-100 ${colors.border}
-                rounded-2xl 
-                p-6
+                bg-white border border-gray-100 ${colors.border}
+                rounded-3xl p-8
+                group relative overflow-hidden flex flex-col
                 transition-all duration-500 ease-out
-                hover:shadow-2xl hover:shadow-gray-900/10 hover:-translate-y-1
-                cursor-pointer group
-                relative overflow-hidden
-                flex flex-col
+                cursor-pointer
               `}
-              
             >
-             
+              {/* Hover background overlay */}
               <div
                 className={`absolute inset-0 ${colors.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
               />
 
-            
+              {/* Icon + Metric */}
               <div className="relative mb-4">
                 <div className="flex items-start justify-between">
-                  <div
+                  <motion.div
+                    whileHover={{ rotate: 10, scale: 1.05 }}
+                    transition={{ type: 'spring', stiffness: 200, damping: 12 }}
                     className={`w-14 h-14 ${colors.iconBg} rounded-xl flex items-center justify-center transition-all duration-300 shrink-0`}
                   >
                     <Icon
                       className={`w-7 h-7 ${colors.iconColor} transition-colors duration-300`}
                     />
-                  </div>
+                  </motion.div>
                   <div className="text-right">
                     <div className="text-xl font-bold text-gray-900 leading-none">
                       {service.metric}
@@ -180,47 +213,34 @@ export default function FeatureCard() {
                 </div>
               </div>
 
-              
+              {/* Content */}
               <div className="relative flex-1 flex flex-col">
                 <h3 className="text-xl text-left font-bold text-gray-900 mb-2 leading-tight">
                   {service.title}
                 </h3>
-
                 <p className="text-lg tracking-wide text-left text-gray-600 leading-relaxed mb-4 flex-1">
                   {service.description}
                 </p>
 
-               
                 <div className="flex items-center justify-between mt-auto">
                   <div
                     className={`h-1 w-10 ${colors.accent} rounded-full opacity-60 group-hover:opacity-100 group-hover:w-14 transition-all duration-300`}
                   />
-                  <div
-                    className={`
-                    w-7 h-7 rounded-full border border-gray-200 flex items-center justify-center
-                    transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:scale-110
-                    ${colors.iconBg}
-                  `}
-                  >
-                    <ArrowRight
-                      className={`w-3.5 h-3.5 ${colors.iconColor} transition-colors duration-300`}
-                    />
-                  </div>
                 </div>
               </div>
 
-             
+              {/* Animated overlay */}
               <div
                 className={`
-                absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent
-                transform -skew-x-12 opacity-0 group-hover:opacity-100
-                transition-all duration-700 group-hover:translate-x-full
-              `}
+                  absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent
+                  transform -skew-x-12 opacity-0 group-hover:opacity-100
+                  transition-all duration-700 group-hover:translate-x-full
+                `}
               />
-            </div>
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </div>
   );
 }

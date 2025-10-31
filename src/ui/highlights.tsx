@@ -171,8 +171,10 @@ export const CompanyHighlights = () => {
                 p-8
                 transition-all duration-500 ease-out
                 hover:shadow-2xl hover:shadow-gray-900/10 hover:-translate-y-2
+                group  w-full
                 cursor-pointer group
                 relative overflow-hidden
+                flex flex-col
               `}
               onMouseEnter={() => setHoveredCard(i)}
               onMouseLeave={() => setHoveredCard(null)}
@@ -210,13 +212,7 @@ export const CompanyHighlights = () => {
                
                 <div className="flex items-center justify-between">
                   <div className={`h-1 w-12 ${colors.accent} rounded-full opacity-60 group-hover:opacity-100 group-hover:w-16 transition-all duration-300`} />
-                  <div className={`
-                    w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center
-                    transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:scale-110
-                    ${colors.iconBg.replace('group-hover:bg-', 'group-hover:bg-').replace('bg-', 'group-hover:border-')}
-                  `}>
-                    <ArrowRight className={`w-4 h-4 ${colors.iconColor.split(' ')[0]} group-hover:text-white transition-colors duration-300`} />
-                  </div>
+                  
                 </div>
               </div>
 

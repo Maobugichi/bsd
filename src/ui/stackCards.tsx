@@ -207,7 +207,7 @@ export const StackedCards = () => {
             <div
               key={card.id}
               className={`
-                absolute w-full h-full  rounded-2xl shadow-xl cursor-pointer
+                absolute w-full h-full  rounded-3xl shadow-xl cursor-pointer
                 ${card.className}
                 border border-white/10
                 transition-all duration-300 ease-out
