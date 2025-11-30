@@ -10,10 +10,12 @@ export const HeroHeading = () => {
                 </span>
                 <span className="text-white"> So Did Our </span>
                 <span className="relative px-2 inline-block overflow-hidden align-middle">
-                    <>
+                 
+                <span className="absolute inset-0 overflow-hidden rounded-xl">
+       
                     <span className="absolute inset-0 bg-black rounded-xl" />
                     <span className="absolute inset-0 bg-gradient-to-r from-black/0 via-white/20 to-black/0 animate-shimmer" />
-                    </>
+                    </span>
                     <span className="relative z-10">Blueprint</span>
                 </span>
                 <span className="text-white"> for the Future.</span>

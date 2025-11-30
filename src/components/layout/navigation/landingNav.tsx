@@ -68,10 +68,10 @@ export const LandingNav = ({ scrollToSection, refs }: LandingNavProps) => {
                   >
                    
                     {isActive && (
-                      <>
+                      <span className="absolute inset-0 overflow-hidden rounded-full">
                         <span className="absolute inset-0 bg-gradient-to-r from-[#333] to-[#000] rounded-full" />
                         <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 animate-shimmer" />
-                      </>
+                      </span>
                     )}
                     
                   
