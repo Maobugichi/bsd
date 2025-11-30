@@ -14,16 +14,16 @@ export const FAQSection = forwardRef<HTMLElement>((_props, ref) => {
     <section 
       ref={ref} 
       tabIndex={6} 
-      className=" flex flex-col items-center justify-center h-auto min-h-[50vh] md:min-h-[70vh] mx-auto mt-16 py-16 w-[90%]"
+      className=" flex flex-col  h-auto min-h-[50vh] md:min-h-[70vh] mx-auto mt-16 py-16 w-[85%]"
     >
-      <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8 text-black">
+      <h2 className="text-2xl md:text-3xl ml-1 font-semibold text-left mb-8 text-black">
         Frequently Asked Questions
       </h2>
       
       <Accordion 
         type="single" 
         collapsible 
-        className="border rounded-3xl mx-auto w-full max-w-3xl"
+        className="border rounded-3xl mx-auto w-full "
       >
         {faqs.map((faq, index) => (
           <AccordionItem 

@@ -42,4 +42,34 @@ export const colorVariants = {
     iconColor: 'text-violet-600 group-hover:text-white',
     accent: 'bg-violet-500',
   },
+   
+  blue: {
+    bg: 'bg-blue-50',
+    iconBg: 'bg-blue-100 group-hover:bg-blue-600',
+    iconColor: 'text-blue-600 group-hover:text-white',
+    accent: 'bg-gradient-to-r from-blue-400 to-blue-600',
+    border: 'group-hover:border-blue-200'
+  },
+  purple: {
+    bg: 'bg-purple-50',
+    iconBg: 'bg-purple-100 group-hover:bg-purple-600',
+    iconColor: 'text-purple-600 group-hover:text-white',
+    accent: 'bg-gradient-to-r from-purple-400 to-purple-600',
+    border: 'group-hover:border-purple-200'
+  },
+  orange: {
+    bg: 'bg-orange-50',
+    iconBg: 'bg-orange-100 group-hover:bg-orange-600',
+    iconColor: 'text-orange-600 group-hover:text-white',
+    accent: 'bg-gradient-to-r from-orange-400 to-orange-600',
+    border: 'group-hover:border-orange-200'
+  },
+  red: {
+    bg: 'bg-red-50',
+    iconBg: 'bg-red-100 group-hover:bg-red-600',
+    iconColor: 'text-red-600 group-hover:text-white',
+    accent: 'bg-gradient-to-r from-red-400 to-red-600',
+    border: 'group-hover:border-red-200'
+  },
+ 
 } as const

@@ -41,7 +41,7 @@ export const Card = ({
     onTouchEnd={onDragEnd}
     onClick={!isDragging && isTop ? onClick : undefined}
   >
-    {children}
+    <p className='tracking-wider'>{children}</p>
     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl pointer-events-none" />
     {isTop && <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-white/30 rounded-full" />}
   </div>

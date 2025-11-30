@@ -1,6 +1,3 @@
-import type { HighlightAdapter } from "../types";
-
-
 export const aboutCompany = [
   {
     id:1,
