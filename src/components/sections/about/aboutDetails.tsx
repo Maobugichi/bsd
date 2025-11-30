@@ -1,7 +1,7 @@
 import { Header } from "../../ui/header"
 import { Paragraph } from "@/components/ui/paragraph"
 import CompanyHighlights from "./cubes/mobile"
-import AboutCompanyDeskTop from "./cubes/desktop"
+
 
 export const AboutDetails = () => {
     return(

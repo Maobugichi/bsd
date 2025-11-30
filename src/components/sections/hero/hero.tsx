@@ -1,5 +1,4 @@
 import type { RefObject } from "react";
-import { motion, useScroll, useSpring, useTransform } from "motion/react";
 import { HeroBackground } from "./hero-background";
 import { HeroContent } from "./hero-content";
 

@@ -1,6 +1,6 @@
 import { colorVariants } from "./constants/color-variants";
 import type { FC } from "react";
-import type { LucideProps } from "lucide-react";
+
 
 export type IconKey = 'settings' | 'building2' | 'userCheck' | 'circuitBoard';
 export type ColorKey = keyof typeof colorVariants;
