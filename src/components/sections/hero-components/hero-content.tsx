@@ -4,7 +4,8 @@ import { Cta } from "@/components/ui/heroCta";
 import type { HeroRefs } from "./types";
 import { HeroHeading } from "./hero-heading";
 
-export const HeroContent = ({refs}:HeroRefs) => {
+export const HeroContent = ({refs,scrollToSection }: HeroRefs & { scrollToSection: (ref:any) => void }) => {
+    console.log(refs)
     return(
          <div className="md:w-[70%] overflow-hidden w-[90%] text-white grid place-items-center gap-5">
             <Badge/>      
@@ -14,7 +15,7 @@ export const HeroContent = ({refs}:HeroRefs) => {
                 className="text-lg md:text-xl w-full md:w-[85%] tracking-wide leading-7 md:leading-8 text-center text-white/90"
             />
             
-            <Cta ref={refs.featureRef}/>
+            <Cta ref={refs.featureRef} onClick={() => scrollToSection(refs.featureRef)}/>
         </div>
     )
 }

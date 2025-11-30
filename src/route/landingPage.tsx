@@ -26,7 +26,7 @@ export const LandingPage = () => {
   return (
     <main className="font-montserrat h-fit ">
       <LandingNav scrollToSection={scrollToSection} refs={{ heroRef, aboutRef, featureRef, galleryRef, testimonialRef, faqRef }} />
-      <Hero refs={{heroRef, featureRef}}/>
+      <Hero refs={{heroRef, featureRef}} scrollToSection={scrollToSection}/>
      
       <About ref={aboutRef} />
       <Feature ref={featureRef} />

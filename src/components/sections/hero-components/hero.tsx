@@ -9,9 +9,8 @@ interface HeroRefs {
      }
 }
 
-export const Hero = ({refs}:HeroRefs) => {
-    
-    
+export const Hero = ({refs, scrollToSection }: HeroRefs & { scrollToSection: (ref:any) => void }) => {
+
     return(
         <section 
          ref={refs.heroRef}
@@ -21,7 +20,7 @@ export const Hero = ({refs}:HeroRefs) => {
           
             <HeroBackground refs={refs}/>
             <div className="relative z-10 h-full grid place-items-center pt-16">
-               <HeroContent refs={refs}/>
+               <HeroContent refs={refs} scrollToSection={scrollToSection}/>
             </div>
         </section>
     )

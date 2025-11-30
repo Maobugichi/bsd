@@ -69,7 +69,7 @@ export const LandingNav = ({ scrollToSection, refs }: LandingNavProps) => {
                    
                     {isActive && (
                       <>
-                        <span className="absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full" />
+                        <span className="absolute inset-0 bg-gradient-to-r from-[#333] to-[#000] rounded-full" />
                         <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 animate-shimmer" />
                       </>
                     )}
@@ -140,7 +140,7 @@ export const LandingNav = ({ scrollToSection, refs }: LandingNavProps) => {
                         w-full text-left px-6 py-4 rounded-xl text-base font-medium
                         transition-all duration-300
                         ${activeTab === item.key
-                          ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-lg shadow-orange-500/20' 
+                          ? 'bg-gradient-to-r from-[#333] to-[#000] text-white shadow-lg shadow-orange-500/20' 
                           : 'text-gray-700 hover:bg-orange-50 hover:shadow-sm'
                         }
                       `}
@@ -152,7 +152,7 @@ export const LandingNav = ({ scrollToSection, refs }: LandingNavProps) => {
                 
                 <li className="mt-6 pt-6 border-t border-gray-200/50">
                   <button 
-                    className="w-full px-6 py-4 rounded-xl bg-gradient-to-r from-[#333] to-[#000] text-white text-base font-medium hover:from-orange-600 hover:to-amber-600 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300"
+                    className="w-full px-6 py-4 rounded-xl bg-gradient-to-r from-[#333] to-[#000] text-white text-base font-medium  hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300"
                   >
                      <a href="mailto:info@example.com" >Contact Us</a>
                   

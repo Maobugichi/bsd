@@ -34,7 +34,7 @@ export const FAQSection = forwardRef<HTMLElement>((_props, ref) => {
             <AccordionTrigger className="text-[clamp(1.2rem,2.5vw,1.5rem)] md:text-[clamp(1.5rem,2vw,2xl)] [&>svg]:size-6 whitespace-nowrap tracking-wider overflow-hidden text-ellipsis text-left">
               {faq.question}
             </AccordionTrigger>
-            <AccordionContent className="tracking-wide text-[clamp(0.9rem,2vw,1.25rem)] md:text-xl text-gray-500">
+            <AccordionContent className="tracking-wider text-[clamp(0.9rem,2vw,1.25rem)] md:text-xl text-gray-500">
               {faq.answer}
             </AccordionContent>
           </AccordionItem>
