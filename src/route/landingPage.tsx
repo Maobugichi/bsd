@@ -1,6 +1,6 @@
 import  { useRef } from 'react';
 import { About } from '../components/sections/about/about';
-import { Hero } from '@/components/sections/hero/hero';
+import { Hero } from '@/components/sections/hero-components/hero';
 import { LandingNav } from '../components/layout/navigation/landingNav';
 import { Feature } from '../components/sections/features';
 import { Gallery } from '@/components/sections/gallery';
