@@ -85,7 +85,7 @@ export const StackedCards = () => {
   };
 
   return (
-    <div className="relative w-full h-fit  min-h-[70vh] grid md:h-96 mx-auto mt-20">
+    <div className="relative w-full h-fit [@media(max-width:380px)]:min-h-[85vh] [@media(min-width:400px)_and_(max-width:412px)]:min-h-[55vh] [@media(min-width:350px)_and_(max-width:360px)]:min-h-[84vh] [@media(min-width:1020px)_and_(max-width:1024px)]:min-h-[40vh]  min-h-[70vh] md:min-h-[45vh] grid md:h-96 mx-auto mt-20">
       <div 
         ref={constraintsRef} 
         className="relative w-full h-full"

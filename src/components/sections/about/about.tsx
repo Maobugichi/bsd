@@ -4,8 +4,8 @@ import  {forwardRef} from "react"
 
 export const About = forwardRef<HTMLElement>((_props,ref) => {
     return(
-        <section tabIndex={1} ref={ref} className="sticky  h-fit font-montserrat md:py-20 py-10  grid place-items-center">
-            <div className="w-[85%]  h-full mx-auto  flex lg:flex-row flex-col gap-10  justify-between items-center">
+        <section tabIndex={1} ref={ref} className="sticky h-fit  font-montserrat  py-20   grid place-items-center">
+            <div className="w-[85%] h-full   mx-auto flex lg:flex-row flex-col [@media(min-width:1020px)_and_(max-width:1024px)]:flex-col gap-20 md:gap-10 items-center">
               <AboutDetails/>
               <AboutImage/>
             </div>

@@ -2,19 +2,21 @@ import { Header } from "../ui/header";
 import { Paragraph } from "../ui/paragraph";
 import  FeatureCard  from "../services/featureCard";
 import { forwardRef } from "react";
+import { Layers } from "lucide-react";
+import { ShimmerBadge } from "../ui/shimmerBadge";
 export const Feature = forwardRef<HTMLElement>((_props,ref) => {
   return (
-    <section ref={ref} className="font-montserrat mt-20 md:mt-0 h-fit  font-inter flex flex-col gap-5 text-black  text-left">
-      <div className="w-[85%] mx-auto grid gap-10">
+    <section ref={ref} className="font-montserrat md:py-20 pt-10 pb-28 h-fit  font-inter flex flex-col gap-5 text-black  text-left">
+      <div className="w-[85%] [@media(min-width:1020px)_and_(max-width:1024px)]:w-[75%] mx-auto grid gap-10">
         <div className="grid gap-5 md:gap-0">
+          <ShimmerBadge text="Services" icon={Layers} width="w-32"/>
           <Header
             level={2}
             className=" md:h-16 text-3xl md:text-4xl font-semibold"
           >
             Our Services
           </Header>
-      
-     
+    
           <Paragraph
             className=""
             content={

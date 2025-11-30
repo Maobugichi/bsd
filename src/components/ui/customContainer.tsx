@@ -31,7 +31,7 @@ const finalRef = cardsRef ?? internalRef;
   });
 
   return (
-    <div className={`flex flex-col h-fit pb-20  ${className}`}>
+    <div className={`flex flex-col h-fit  ${className}`}>
       {items.map((item, i) =>
         renderCard(item, i, (el) => (finalRef.current[i] = el))
       )}

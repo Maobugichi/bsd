@@ -4,7 +4,7 @@ import { Hero } from '@/components/sections/hero-components/hero';
 import { LandingNav } from '../components/layout/navigation/landingNav';
 import { Feature } from '../components/sections/features';
 import { Gallery } from '@/components/sections/gallery';
-import { Testimonial } from '../components/sections/testimonial';
+import { Testimonial } from '../components/testimonial/testimonial';
 import { FAQSection } from '../components/sections/faq/faq';
 import { Footer } from '../components/layout/footer/footer';
 import { CompanyHighlights } from '../components/sections/highlight/highlights';

@@ -3,7 +3,7 @@ import { forwardRef } from "react"
 
 export const Cta = forwardRef<HTMLButtonElement,  { onClick?: () => void }>(({ onClick }, ref) => {
     return(
-        <div className="w-fit flex relative   items-center justify-center overflow-hidden   gap-2 h-fit">
+        <div className="w-fit [@media(min-width:1020px)_and_(max-width:1024px)]:w-[200px] flex relative   items-center justify-center overflow-hidden   gap-2 h-fit">
             <Button 
                 ref={ref} 
                 onClick={onClick}
@@ -15,17 +15,6 @@ export const Cta = forwardRef<HTMLButtonElement,  { onClick?: () => void }>(({ o
                 </span>
                 <span className="relative z-10 ">Our Services</span>
             </Button>
-
-            <style >{`
-                @keyframes shimmer {
-                    0% { transform: translateX(-100%); }
-                    100% { transform: translateX(100%); }
-                }
-                
-                .animate-shimmer {
-                    animation: shimmer 2.5s ease-in-out infinite;
-                }
-            `}</style>
         </div>
     )
 })

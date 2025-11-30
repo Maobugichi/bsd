@@ -13,7 +13,7 @@ export const Card = () => {
             items={companyHighlight}
             cardsRef={cardsRef}
             id="highlight-cards"
-            className="md:grid md:place-items-center md:grid-cols-3  gap-5"
+            className="md:grid md:place-items-center grid-cols-2 [@media(min-width:1020px)_and_(max-width:1024px)]:grid-cols-2 lg:grid-cols-3  gap-5"
             renderCard={(item, index, ref) => (
             <CustomCard
              key={item.id}

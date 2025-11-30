@@ -13,7 +13,8 @@ export default function FeatureCard() {
         id="company-cards"
         cardsRef={cubeRef}
         className="md:grid 
-        md:grid-cols-3  
+        md:grid-cols-2 lg:grid-cols-3
+        [@media(min-width:1020px)_and_(max-width:1024px)]:grid-cols-2  
         gap-5 "
         renderCard={(item,i,ref) => (
           <CustomCard

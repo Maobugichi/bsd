@@ -6,6 +6,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { faqs } from "./constant/faq-object";
+import { Header } from "@/components/ui/header";
+import { HelpCircle } from "lucide-react";
+import { ShimmerBadge } from "@/components/ui/shimmerBadge";
 
 
 
@@ -14,11 +17,12 @@ export const FAQSection = forwardRef<HTMLElement>((_props, ref) => {
     <section 
       ref={ref} 
       tabIndex={6} 
-      className=" flex flex-col  h-auto min-h-[50vh] md:min-h-[70vh] mx-auto mt-16 py-16 w-[85%]"
+      className=" flex flex-col  h-auto min-h-[50vh] md:min-h-[70vh] [@media(min-width:1020px)_and_(max-width:1024px)]:min-h-[50vh] [@media(min-width:1020px)_and_(max-width:1024px)]:py-20 mx-auto mt-16 py-16 w-[85%]  [@media(min-width:1020px)_and_(max-width:1024px)]:w-[75%]"
     >
-      <h2 className="text-2xl md:text-3xl ml-1 font-semibold text-left mb-8 text-black">
+      <ShimmerBadge text="Faq?" icon={HelpCircle} width="w-32"/> 
+      <Header level={2} className="w-[80%] text-3xl md:text-4xl ml-1 font-semibold text-left mb-8 text-black font-montserrat">
         Frequently Asked Questions
-      </h2>
+      </Header>
       
       <Accordion 
         type="single" 
