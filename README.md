@@ -1,50 +1,75 @@
-# React + TypeScript + Vite
+BSDLight – Construction Company Landing Page 🏗️✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BSDLight is a modern and high-performance landing page built for a construction company. It showcases services, brand identity, and company credibility using smooth interactions, clean layouts, and a polished user experience. The project is powered by React, Tailwind CSS, GSAP, Framer Motion, and other supporting tools.
 
-Currently, two official plugins are available:
+FEATURES 🚀
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Smooth scroll based animations
+GSAP powers scroll triggered effects, timeline animations, and fluid section transitions that make the experience feel premium.
 
-## Expanding the ESLint configuration
+Modern UI and UX 🎨
+Tailwind CSS delivers a clean, responsive, and well-structured layout optimized for all screens.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Built with React ⚛️
+A fully component-driven architecture that is scalable and easy to maintain.
 
-- Configure the top-level `parserOptions` property like this:
+Extra motion enhancements 🎞️
+Framer Motion adds micro-interactions and subtle transitions that improve the feel of the interface.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+TECH STACK 🧰
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+React for building the interface
+Tailwind CSS for styling
+GSAP for animation
+Framer Motion for motion components
+Vite for dev environment
+TypeScript for extra safety
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+INSTALLATION ⚙️
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Clone the repository
+git clone (https://github.com/Maobugichi/bsd)
+
+Enter the project folder
+cd bsd
+
+Install all dependencies
+npm install
+
+Start the development server
+npm run dev
+
+PROJECT STRUCTURE (Simplified) 📁
+
+src
+components
+sections
+assets
+hooks
+utils
+
+ABOUT THE PROJECT 🏢
+
+BSDLight was created to give construction businesses a clean, trustworthy, and visually engaging landing page. Smooth animations and structured layouts guide users through the story of the brand while keeping the experience fast and lightweight. The design reflects reliability, craftsmanship, and modern standards.
+
+LICENSE 📄
+
+### 🏠 [Homepage](https://www.bsdlight.com)
+
+### ✨ [Demo](a modern and high-performance landing page built for a construction company.)
+
+
+
+## Author
+
+👤 **maobugichi**
+
+* Website: https://maobugichi.github.io/portfolio/#/portfolio
+* Twitter: [@maobu\_high](https://twitter.com/maobu\_high)
+* Github: [@maobugichi](https://github.com/maobugichi)
+* LinkedIn: [@maobugichi](https://linkedin.com/in/maobugichi)
+
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
