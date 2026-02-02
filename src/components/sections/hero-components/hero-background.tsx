@@ -25,19 +25,19 @@ export const HeroBackground = ({ refs }: HeroRefs) => {
             style={{ y, opacity }}
         >
             <img
-                src={getCloudinaryUrl(1920)}
-                srcSet={`
-                    ${getCloudinaryUrl(640)} 640w,
-                    ${getCloudinaryUrl(1024)} 1024w,
-                    ${getCloudinaryUrl(1920)} 1920w
-                `}
-                sizes="100vw"
-                alt="Construction site background"
-                className="w-full h-full object-cover"
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
+            src="https://res.cloudinary.com/dao2a3ib4/image/upload/f_auto,q_auto,w_1600/bsd-1_zuaiyr"
+            srcSet="
+                https://res.cloudinary.com/dao2a3ib4/image/upload/f_auto,q_auto,w_800/bsd-1_zuaiyr 800w,
+                https://res.cloudinary.com/dao2a3ib4/image/upload/f_auto,q_auto,w_1200/bsd-1_zuaiyr 1200w,
+                https://res.cloudinary.com/dao2a3ib4/image/upload/f_auto,q_auto,w_1600/bsd-1_zuaiyr 1600w,
+                https://res.cloudinary.com/dao2a3ib4/image/upload/f_auto,q_auto,w_2000/bsd-1_zuaiyr 2000w
+            "
+            sizes="100vw"
+            alt="Construction site background"
+            className="w-full h-full object-cover"
+            fetchPriority="high"
             />
+
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black" />
         </motion.div>
     )

@@ -10,7 +10,9 @@ export const HightlightHeader = () => {
             Why Choose Our Expertise?
             </h2>
             <Paragraph
-            content="Discover the numbers and qualities that make us the trusted partner for your construction and design needs."/>
+            content="Discover the numbers and qualities that make us the trusted partner for your construction and design needs."
+            className="text-gray-600 font-roboto"
+            />
          </div>
     )
 }
