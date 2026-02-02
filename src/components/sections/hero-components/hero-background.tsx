@@ -1,8 +1,7 @@
 import { motion, useTransform, useScroll, useSpring } from "motion/react"
 import type { HeroRefs } from "./types";
 
-const getCloudinaryUrl = (width: number) => 
-    `https://res.cloudinary.com/dao2a3ib4/image/upload/f_auto,q_auto:eco,w_${width},c_limit/v1760973515/bsd-1_zuaiyr.jpg`;
+
 
 export const HeroBackground = ({ refs }: HeroRefs) => {
     const { scrollYProgress } = useScroll({

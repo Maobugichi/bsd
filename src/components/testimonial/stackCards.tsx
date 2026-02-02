@@ -3,9 +3,7 @@ import { Star, ShieldCheck, Award } from "lucide-react";
 import { Controls } from "./controls";
 import { Card } from "./card";
 import { Current } from "./current";
-import type { CardStackProps } from "./types";
 
-// --- 1. CLEAN DATA (No JSX here) ---
 export const cardsData = [
   {
     id: 1,
@@ -13,7 +11,7 @@ export const cardsData = [
     category: 'Construction & Safety',
     className: 'bg-gradient-to-br from-slate-900 to-slate-800',
     description: "From the very beginning, the team showed outstanding transparency, professionalism, and responsiveness. Every phase of our warehouse expansion was managed with care and precision. They communicated clearly, met deadlines, and avoided cost overruns — a rare feat.",
-    theme: 'emerald', // Used for conditional coloring
+    theme: 'emerald',
     Icon: ShieldCheck
   },
   {
