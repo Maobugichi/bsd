@@ -12,13 +12,13 @@ export const cards: CardStackProps[]= [
     category: 'Construction & Safety',
     className: 'bg-gradient-to-br from-slate-900 to-slate-800',
     children: (
-      <div className="p-6 md:p-8 flex flex-col h-full gap-3 md:gap-5">
+      <div className="flex flex-col h-fit py-20 px-4 md:px-8 gap-3 md:gap-5">
         <div className="grid gap-3">
-          <div className="flex items-center gap-2 mb-2">
+          <div className="flex items-center gap-2  mb-2">
             <span className="text-xs font-medium text-slate-400 uppercase tracking-wider">Construction & Safety</span>
           </div>
           <h1 className="text-xl md:text-3xl font-semibold mb-3 text-white">Reliable and Transparent</h1>
-          <p className="text-md tracking-wide md:text-lg  leading-relaxed text-slate-300">
+          <p className="text-md tracking-wide md:text-lg  leading-10 text-slate-300">
             "From the very beginning, the team showed outstanding transparency, professionalism, and responsiveness. Every phase of our warehouse expansion was managed with care and precision. They communicated clearly, met deadlines, and avoided cost overruns — a rare feat. Their commitment to safety and quality stood out, consistently meeting and exceeding standards."
           </p>
         </div>
@@ -41,13 +41,13 @@ export const cards: CardStackProps[]= [
     category: 'MEP & Design',
     className: 'bg-gradient-to-br from-gray-900 to-gray-800',
     children: (
-      <div className="p-6 md:p-8 flex flex-col h-full gap-3 md:gap-5">
+      <div className="flex md:px-8 flex-col h-fit py-20 px-4 gap-3 md:gap-5">
         <div className="grid gap-3">
           <div className="flex items-center gap-2 mb-2">
             <span className="text-xs font-medium text-slate-400 uppercase tracking-wider">MEP & Design</span>
           </div>
           <h1 className="text-xl md:text-3xl font-semibold mb-3 text-white">Exceptional Quality & Design</h1>
-          <p className="text-md md:text-lg tracking-wide leading-relaxed text-slate-300">
+          <p className="text-md md:text-lg tracking-wide leading-10 text-slate-300">
             "They transformed our outdated office into a sleek, modern environment that is both visually impressive and highly functional. From HVAC and acoustics to lighting and layout, every detail was thoughtfully executed with a balance of creativity and technical expertise. Their ability to deliver a polished, performance-driven workspace truly exceeded our expectations."
           </p>
         </div>
@@ -70,13 +70,13 @@ export const cards: CardStackProps[]= [
     category: 'IT & Technology',
     className: 'bg-gradient-to-br from-slate-700 to-slate-600',
     children: (
-      <div className="p-6 md:p-8 flex flex-col h-full gap-3 md:gap-5">
+      <div className="flex flex-col md:px-8 h-fit py-20 px-4 gap-3 md:gap-5">
         <div className="grid gap-3">
           <div className="flex items-center gap-2 mb-2">
             <span className="text-xs font-medium text-slate-400 uppercase tracking-wider">IT & Technology</span>
           </div>
           <h1 className="text-xl md:text-3xl font-semibold mb-3 text-white">Tech-Forward Solutions</h1>
-          <p className="text-md md:text-lg tracking-wide leading-relaxed text-slate-300">
+          <p className="text-md md:text-lg tracking-wide leading-10 text-slate-300">
             "They handled our data center cabling and VoIP deployment with impressive precision and efficiency. Every aspect of the infrastructure was planned and executed with care, minimizing downtime and ensuring a smooth transition. Since implementation, our systems have run reliably, and their support team has been both responsive and knowledgeable."
           </p>
         </div>

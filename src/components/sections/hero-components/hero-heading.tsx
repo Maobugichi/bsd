@@ -1,6 +1,6 @@
 export const HeroHeading = () => {
     return(
-           <h1 className="overflow-hidden font-montserrat md:leading-tight leading-14 tracking-wide text-4xl w-full md:w-[80%] md:text-5xl lg:text-6xl font-bold text-center">
+           <h1 className="overflow-hidden font-montserrat md:leading-tight leading-16 tracking-wide text-[43px] w-full md:w-[80%] md:text-5xl lg:text-6xl font-bold text-center">
                 <span className="text-white">Our Vision Got </span>
                 <span className="relative inline-block">
                     <span className="relative z-10">

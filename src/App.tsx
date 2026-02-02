@@ -13,14 +13,11 @@ function App() {
 
   return (
     <HashRouter>
-    
         <ScrollToTop />
         <Routes>
           <Route path="homepage/:1" element={<LandingPage/>} />
            <Route index element={<Navigate to="homepage/:1" />} />
-           
         </Routes>
-     
     </HashRouter>
   )
 }

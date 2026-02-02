@@ -20,7 +20,7 @@ export const Hero = ({refs, scrollToSection }: HeroRefs & { scrollToSection: (re
           
             <HeroBackground refs={refs}/>
             <div className="relative z-10 h-full grid place-items-center pt-16">
-               <HeroContent refs={refs} scrollToSection={scrollToSection}/>
+                <HeroContent refs={refs} scrollToSection={scrollToSection}/>
             </div>
         </section>
     )
