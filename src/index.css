@@ -3,9 +3,16 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/fonts/manrope-v15-latin-700.woff2') format('woff2');
+  src: url('/fonts/manrope-v20-latin-700.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/roboto-v50-latin-700.woff2') format('woff2');
+}
 
 @import "tailwindcss";
 @import "tw-animate-css";
