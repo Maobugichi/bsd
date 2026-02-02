@@ -1,10 +1,22 @@
-import aboutImg from "../../../assets/bsd-about.webp";
+import about400 from "../../../assets/about-400.webp";
+import about600 from "../../../assets/about-600.webp";
+import about1000 from "../../../assets/about-1000.webp";
 
 export const AboutImage = () => {
-    return(
-        <div className="w-full [@media(min-width:1020px)_and_(max-width:1024px)]:h-[400px]   [@media(min-width:1020px)_and_(max-width:1024px)]:w-[90%] lg:w-[40%] h-[50%] md:h-[300px] lg:h-full grid [@media(min-width:1020px)_and_(max-width:1024px)]:place-items-start lg:place-items-end">
-            <img loading="lazy" className="rounded-xl w-full object-fill h-full md:h-[62%] [@media(min-width:1020px)_and_(max-width:1024px)]:h-[80%]" src={aboutImg} alt="about image"/>
-        </div>
-        
-    )
-}
+  return (
+    <div className="w-full h-[50%] md:h-[300px] lg:h-full lg:w-[40%] grid place-items-center lg:place-items-end">
+      <img
+        src={about400}
+        srcSet={`
+          ${about400} 400w,
+          ${about600} 613w,
+          ${about1000} 1000w
+        `}
+        sizes="(max-width: 640px) 400px, (max-width: 1020px) 613px, 1000px"
+        className="rounded-xl w-full h-full object-cover md:h-[62%]"
+        loading="lazy"
+        alt="about image"
+      />
+    </div>
+  );
+};
