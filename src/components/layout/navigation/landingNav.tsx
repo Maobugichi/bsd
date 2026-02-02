@@ -100,7 +100,7 @@ export const LandingNav = ({ scrollToSection, refs }: LandingNavProps) => {
             onClick={showNav}
             className="p-2 hover:bg-orange-50 rounded-full transition-colors"
           >
-            <Menu size={24} className="text-gray-700" />
+            <Menu  aria-label="Open menu" size={24} className="text-gray-700" />
           </button>
         </div>
       </nav>
