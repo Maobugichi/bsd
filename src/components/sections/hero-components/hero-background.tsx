@@ -17,8 +17,8 @@ export const HeroBackground = ({ refs }: HeroRefs) => {
     
     const y = useTransform(smoothProgress, [0, 1], ["0%", "20%"]);
     const opacity = useTransform(smoothProgress, [0, 1], [1, 0.7]);
-    const getCloudinaryUrl = (width: number) => 
-    `https://res.cloudinary.com/dao2a3ib4/image/upload/f_auto,q_auto:eco,w_${width},c_limit/v1760973515/bsd-1_zuaiyr.jpg`;
+     const getCloudinaryUrl = (width: number) => 
+    `https://res.cloudinary.com/dao2a3ib4/image/upload/f_avif,q_70,w_${width},c_limit/v1760973515/bsd-1_zuaiyr.jpg`;
     return (
         <motion.div 
             className="absolute inset-0 will-change-transform"
