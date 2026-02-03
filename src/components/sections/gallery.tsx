@@ -6,7 +6,7 @@ import { Images } from "lucide-react"
 
 export const Gallery = forwardRef<HTMLElement>((_props,ref) => {
     return(
-        <section ref={ref} tabIndex={3} className="py-20 h-fit ">
+        <section ref={ref}  className="py-20 h-fit ">
           <div className=" space-y-4 w-[85%] [@media(min-width:1020px)_and_(max-width:1024px)]:w-[75%] mx-auto   h-full flex flex-col gap-8  md:grid place-items-start">
             <div className="grid gap-2">
                 <ShimmerBadge text="Gallery" icon={Images} width="w-32"/>

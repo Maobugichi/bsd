@@ -16,7 +16,7 @@ export const FAQSection = forwardRef<HTMLElement>((_props, ref) => {
   return (
     <section 
       ref={ref} 
-      tabIndex={6} 
+   
       className=" flex flex-col  h-auto min-h-[50vh] md:min-h-[70vh] [@media(min-width:1020px)_and_(max-width:1024px)]:min-h-[50vh] [@media(min-width:1020px)_and_(max-width:1024px)]:py-20 mx-auto mt-16 py-16 w-[85%]  [@media(min-width:1020px)_and_(max-width:1024px)]:w-[75%]"
     >
       <ShimmerBadge text="Faq?" icon={HelpCircle} width="w-32"/> 
