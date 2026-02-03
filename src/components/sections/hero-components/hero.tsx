@@ -14,7 +14,7 @@ export const Hero = ({refs, scrollToSection }: HeroRefs & { scrollToSection: (re
     return(
         <section 
          ref={refs.heroRef}
-         tabIndex={0}
+        
          className="h-[110vh] md:h-[140vh] [@media(max-width:380px)]:h-[140vh] [@media(min-width:1020px)_and_(max-width:1024px)]:h-[80vh] [@media(width:1024px)_and_(height:600px)]:h-[120vh] relative overflow-hidden"
         >
           
