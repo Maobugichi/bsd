@@ -11,7 +11,7 @@ export const HightlightHeader = () => {
             </h2>
             <Paragraph
             content="Discover the numbers and qualities that make us the trusted partner for your construction and design needs."
-            className="text-gray-600 font-roboto"
+             className="text-gray-600 font-roboto font-light  leading-relaxed text-xl md:text-2xl tracking-widest md:max-w-3xl md:w-[80%] "
             />
          </div>
     )

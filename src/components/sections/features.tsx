@@ -8,7 +8,7 @@ export const Feature = forwardRef<HTMLElement>((_props,ref) => {
   return (
     <section ref={ref} className="font-montserrat md:py-20 pt-10 pb-28 h-fit  font-inter flex flex-col gap-5 text-black  text-left">
       <div className="w-[85%] [@media(min-width:1020px)_and_(max-width:1024px)]:w-[75%] mx-auto grid gap-10">
-        <div className="grid gap-5 md:gap-0">
+        <div className="grid gap-5 md:gap-0 w-full lg:w-[80%]  [@media(min-width:1020px)_and_(max-width:1024px)]:w-[90%] ">
           <ShimmerBadge text="Services" icon={Layers} width="w-32"/>
           <Header
             level={2}
@@ -18,7 +18,7 @@ export const Feature = forwardRef<HTMLElement>((_props,ref) => {
           </Header>
     
           <Paragraph
-            className="a"
+            className="text-gray-600 font-roboto font-light  leading-relaxed text-xl md:text-2xl tracking-widest md:max-w-3xl md:w-[80%] "
             content={
               <>
                 Whether you're improving your home, optimizing a workspace, or starting small-scale developments, our light construction services make it simple. No need for a large crew or complex planning  we handle renovations, fittings, drywall, partitions, finishes, and more. Quick setup, quality results, and the flexibility to build exactly what you need, when you need it.
@@ -26,7 +26,6 @@ export const Feature = forwardRef<HTMLElement>((_props,ref) => {
             }
           />
         </div>
-      
         <FeatureCard />
        </div>
     </section>

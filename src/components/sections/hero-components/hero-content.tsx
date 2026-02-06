@@ -11,7 +11,7 @@ export const HeroContent = ({refs,scrollToSection }: HeroRefs & { scrollToSectio
             <HeroHeading/>                              
             <Paragraph 
                 content="We are a global construction company dedicated to turning your imagination into reality. From concept to completion, we bring bold ideas to life with precision, innovation, and craftsmanship no matter where in the world you are" 
-                className="[@media(min-width:1020px)_and_(max-width:1024px)]:text-2xl md:text-xl w-full md:leading-8 text-center text-white/90 font-roboto"
+                className="[@media(min-width:1020px)_and_(max-width:1024px)]:text-3xl md:text-2xl w-full md:leading-9 text-center text-white/90 font-roboto tracking-widest md:max-w-3xl md:w-[80%]"
             />
             
             <Cta ref={refs.featureRef} onClick={() => scrollToSection(refs.featureRef)}/>

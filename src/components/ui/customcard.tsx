@@ -71,7 +71,7 @@ export function CustomCard<T>({
             {getTitle(item)}
           </h3>
 
-          <p className="text-lg tracking-wide text-left text-gray-600 leading-relaxed mb-4 flex-1">
+          <p className="text-lg tracking-wider font-roboto text-left text-gray-600 leading-relaxed mb-4 font-light flex-1">
             {getDesc(item)}
           </p>
 

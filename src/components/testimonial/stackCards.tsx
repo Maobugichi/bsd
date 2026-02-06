@@ -138,7 +138,7 @@ export const StackedCards = () => {
           return (
            <Card
             key={card.id}
-            {...card} // Passes className, title, etc.
+            {...card} 
             isTop={index === 0}
             isDragging={isDragging}
             transform={transform}
