@@ -1,13 +1,13 @@
 import  { useRef } from 'react';
-import { About } from '../components/sections/about/about';
-import { Hero } from '@/components/sections/hero-components/hero';
+import { About } from '../components/layout/about/about';
+import { Hero } from '@/components/layout/hero/hero';
 import { LandingNav } from '../components/layout/navigation/landingNav';
-import { Feature } from '../components/sections/features';
-import { Gallery } from '@/components/sections/gallery';
-import { Testimonial } from '../components/testimonial/testimonial';
-import { FAQSection } from '../components/sections/faq/faq';
+import { Feature } from '../components/layout/featured/features';
+import { Gallery } from '@/components/layout/gallery/gallery';
+import { Testimonial } from '../components/layout/testimonial/testimonial';
+import { FAQSection } from '../components/layout/faq/faq';
 import { Footer } from '../components/layout/footer/footer';
-import { CompanyHighlights } from '../components/sections/highlight/highlights';
+import { CompanyHighlights } from '@/components/layout/highlight';
 
 export const LandingPage = () => {
   const heroRef = useRef(null);
@@ -18,10 +18,9 @@ export const LandingPage = () => {
   const faqRef = useRef(null);
  
 
-  const scrollToSection = (ref:any) => {
-    ref.current.scrollIntoView({ behavior: 'smooth' });
+  const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
-
  
   return (
     <main className="font-montserrat h-fit ">

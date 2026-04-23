@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { colorVariants } from "../sections/about/constants/color-variants";
+import { colorVariants } from "../../constants/color-variants";
 
 interface StackCardProps<T> {
   item: T;

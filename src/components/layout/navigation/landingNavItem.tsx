@@ -9,32 +9,44 @@ interface ListItemProps {
     galleryRef: RefObject<HTMLElement>;
     testimonialRef: RefObject<HTMLElement>;
     faqRef: RefObject<HTMLElement>;
-    //footerRef: RefObject<HTMLElement>;
   };
-  closeNav:() => void
+  closeNav: () => void;
+  activeTab: string;
 }
 
-export const ListItem = ({ scrollToSection, refs, closeNav }: ListItemProps) => {
-   const listItems = [
+const listItems = [
   { key: "heroRef", name: "Home" },
   { key: "galleryRef", name: "Projects" },
   { key: "featureRef", name: "Services" },
   { key: "aboutRef", name: "About" },
 ];
-    return(
-        <ul className="flex lg:flex-row flex-col md:h-[60%] h-[40%]  lg:h-full  mt-20 md:mt-0 text-md justify-between  gap-5 p-6 md:items-center  ">
-        {listItems.map((item) => (
-            <li
+
+export const ListItem = ({ scrollToSection, refs, closeNav, activeTab }: ListItemProps) => {
+  return (
+    <ul className="flex lg:flex-row flex-col">
+      {listItems.map((item) => {
+        const isActive = activeTab === item.key;
+        return (
+          <li
             key={item.key}
-            className="cursor-pointer"
             onClick={() => {
-                scrollToSection(refs[item.key as keyof typeof refs])
-                closeNav()
+              scrollToSection(refs[item.key as keyof typeof refs]);
+              closeNav();
             }}
-            >
+            className={`
+              relative cursor-pointer px-5 h-20 flex items-center
+              font-montserrat text-sm font-bold tracking-wide
+              transition-colors duration-300
+              ${isActive ? "text-amber-400" : "text-white/50 hover:text-white"}
+            `}
+          >
+            {isActive && (
+              <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-amber-500" />
+            )}
             {item.name}
-            </li>
-        ))}
-        </ul>
-    )
-}
+          </li>
+        );
+      })}
+    </ul>
+  );
+};

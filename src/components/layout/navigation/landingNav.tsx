@@ -1,5 +1,5 @@
-import { Logo } from "../../ui/logo"
-import { Menu, X } from 'lucide-react';
+import { Logo } from "../../ui/logo";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import type { RefObject } from "react";
@@ -16,164 +16,164 @@ interface LandingNavProps {
   };
 }
 
+const listItems = [
+  { key: "heroRef", name: "Home" },
+  { key: "galleryRef", name: "Projects" },
+  { key: "featureRef", name: "Services" },
+  { key: "aboutRef", name: "About" },
+];
+
 export const LandingNav = ({ scrollToSection, refs }: LandingNavProps) => {
   const [show, setIsShow] = useState<boolean>(false);
-  const [activeTab, setActiveTab] = useState<string>('heroRef');
- 
-  const listItems = [
-    { key: "heroRef", name: "Home" },
-    { key: "galleryRef", name: "Projects" },
-    { key: "featureRef", name: "Services" },
-    { key: "aboutRef", name: "About" },
-  ];
-
-  function showNav() {
-    setIsShow(true);
-  }
-
-  function closeNav() {
-    setIsShow(false);
-  }
+  const [activeTab, setActiveTab] = useState<string>("heroRef");
 
   const handleNavClick = (itemKey: string) => {
     setActiveTab(itemKey);
     scrollToSection(refs[itemKey as keyof typeof refs]);
-    closeNav();
+    setIsShow(false);
   };
 
   return (
     <>
-      <nav 
-        className="font-inter overflow-hidden bg-white/80 flex items-center lg:py-10 px-6 text-base justify-between backdrop-blur-lg text-black fixed top-10 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-6xl rounded-full h-16 border border-gray-200 shadow-lg shadow-black/5"
-      >
-        <Logo />
-      
-        <div className="hidden lg:flex items-center gap-2">
-          <ul className="flex items-center gap-5">
-            {listItems.map((item) => {
-              const isActive = activeTab === item.key;
-              
-              return (
-                <li key={item.key}>
-                  <button
-                    onClick={() => handleNavClick(item.key)}
-                    className={`
-                      group relative px-5 py-2 rounded-full text-lg font-medium
-                      transition-all duration-300 ease-out
-                      ${isActive 
-                        ? 'text-white scale-105' 
-                        : 'text-gray-700 hover:text-gray-900 hover:scale-105'
-                      }
-                    `}
-                  >
-                   
-                    {isActive && (
-                      <span className="absolute inset-0 overflow-hidden rounded-full">
-                        <span className="absolute inset-0 bg-gradient-to-r from-[#333] to-[#000] rounded-full" />
-                        <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 animate-shimmer" />
-                      </span>
-                    )}
-                    
-                  
-                    {!isActive && (
-                      <span className="absolute inset-0 bg-orange-50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    )}
-                    
-                    <span className="relative z-10">{item.name}</span>
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-          
-          
-          <button 
-            className="ml-3 relative text-white text-lg px-6 py-3 rounded-full bg-gradient-to-r from-[#333] to-[#000] font-medium hover:from-orange-600 hover:to-amber-600 transition-all duration-300 hover:scale-105 shadow-lg shadow-orange-500/20"
-          >
-            <span className="relative z-10"><a href="mailto:info@example.com" >Contact Us</a></span> 
-          </button>
-        </div>
+      {/* Desktop nav */}
+      <nav className="bg-black/80 backdrop-blur-lg text-white fixed top-0 left-0 right-0 z-50 border-b border-white/[0.07]">
+        <div className="w-[90%] max-w-7xl mx-auto h-20 flex items-center justify-between">
+          <Logo />
 
-     
-        <div className="lg:hidden">
-          <button 
-            onClick={showNav}
-            className="p-2 hover:bg-orange-50 rounded-full transition-colors"
-          >
-            <Menu  aria-label="Open menu" size={24} className="text-gray-700" />
-          </button>
-        </div>
-      </nav>
-
-    
-      <AnimatePresence>
-        {show && (
-          <motion.nav
-            initial={{ y: '-100%', opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: '-100%', opacity: 0 }}
-            transition={{ 
-              type: 'spring', 
-              damping: 25, 
-              stiffness: 300,
-              opacity: { duration: 0.2 }
-            }}
-            className="fixed inset-0 z-[60] lg:hidden flex flex-col bg-[#f9fbfd] rounded-t-xl"
-          >
-            <div className="h-20 flex justify-between items-center px-6 border-b border-solid border-gray-200/50 bg-white/80 backdrop-blur-lg sticky top-0 z-10">
-              <Logo />
-              <button 
-                onClick={closeNav}
-                className="p-3 hover:bg-orange-50 rounded-full transition-colors"
-              >
-                <X size={32} className="text-gray-700" />
-              </button>
-            </div>
-
-            <div className="flex-1 overflow-y-auto pb-8">
-              <ul className="flex flex-col gap-2 p-6 mt-8">
-                {listItems.map((item) => (
+          {/* Desktop links */}
+          <div className="hidden lg:flex items-center gap-8">
+            <ul className="flex items-center">
+              {listItems.map((item) => {
+                const isActive = activeTab === item.key;
+                return (
                   <li key={item.key}>
                     <button
                       onClick={() => handleNavClick(item.key)}
                       className={`
-                        w-full text-left px-6 py-4 rounded-xl text-base font-medium
-                        transition-all duration-300
-                        ${activeTab === item.key
-                          ? 'bg-gradient-to-r from-[#333] to-[#000] text-white shadow-lg shadow-orange-500/20' 
-                          : 'text-gray-700 hover:bg-orange-50 hover:shadow-sm'
-                        }
+                        relative px-5 h-20 flex items-center
+                        font-montserrat text-base font-bold tracking-wide
+                        transition-colors duration-300
+                        ${isActive ? "text-amber-400" : "text-white/40 hover:text-white"}
                       `}
                     >
+                      {isActive && (
+                        <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-amber-500" />
+                      )}
                       {item.name}
                     </button>
                   </li>
-                ))}
-                
-                <li className="mt-6 pt-6 border-t border-gray-200/50">
-                  <button 
-                    className="w-full px-6 py-4 rounded-xl bg-gradient-to-r from-[#333] to-[#000] text-white text-base font-medium  hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300"
+                );
+              })}
+            </ul>
+
+            
+           <a   href="mailto:info@bsdlight.com"
+              className="flex items-center gap-2 px-6 py-3
+                         bg-amber-500 hover:bg-amber-400
+                         text-[#0a0a0a] text-base font-bold font-montserrat tracking-wide
+                         transition-colors duration-300 group"
+            >
+              Contact Us
+              <ArrowUpRight
+                size={16}
+                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
+              />
+            </a>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsShow(true)}
+            className="lg:hidden p-2 hover:bg-white/5 transition-colors"
+            aria-label="Open menu"
+          >
+            <Menu size={22} className="text-white/70" />
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {show && (
+          <motion.nav
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "tween", duration: 0.28, ease: "easeInOut" }}
+            className="fixed inset-0 z-[60] lg:hidden flex flex-col bg-[#0a0a0a]"
+          >
+            {/* Mobile header */}
+            <div className="h-20 flex justify-between items-center px-6 border-b border-white/[0.07]">
+              <Logo />
+              <button
+                onClick={() => setIsShow(false)}
+                className="p-2 hover:bg-white/5 transition-colors"
+                aria-label="Close menu"
+              >
+                <X size={22} className="text-white/60" />
+              </button>
+            </div>
+
+            {/* Mobile links */}
+            <div className="flex-1 flex flex-col justify-between px-6 pt-4 pb-10">
+              <ul className="flex flex-col">
+                {listItems.map((item, i) => (
+                  <motion.li
+                    key={item.key}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.06, duration: 0.3 }}
                   >
-                     <a href="mailto:info@example.com" >Contact Us</a>
-                  
-                  </button>
-                </li>
+                    <button
+                      onClick={() => handleNavClick(item.key)}
+                      className={`
+                        w-full text-left py-5 flex items-center justify-between
+                        border-b border-white/[0.06]
+                        transition-colors duration-300
+                        ${activeTab === item.key ? "text-amber-400" : "text-white/40 hover:text-white"}
+                      `}
+                    >
+                      <span className="font-montserrat text-4xl font-bold tracking-tight leading-none">
+                        {item.name}
+                      </span>
+                      <span className={`font-inter text-xs tracking-widest tabular-nums transition-colors duration-300
+                        ${activeTab === item.key ? "text-amber-500/60" : "text-white/15"}`}
+                      >
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                    </button>
+                  </motion.li>
+                ))}
               </ul>
+
+              {/* CTA at bottom */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.28, duration: 0.35 }}
+                className="flex flex-col gap-4"
+              >
+                
+              <a    href="mailto:info@bsdlight.com"
+                  className="w-full flex items-center justify-center gap-2 py-4
+                             bg-amber-500 hover:bg-amber-400 text-[#0a0a0a]
+                             text-base font-bold font-montserrat tracking-wide
+                             transition-colors duration-300 group"
+                >
+                  Contact Us
+                  <ArrowUpRight
+                    size={16}
+                    className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
+                  />
+                </a>
+                <p className="font-inter text-xs text-white/20 text-center tracking-widest uppercase">
+                  Built with precision
+                </p>
+              </motion.div>
             </div>
           </motion.nav>
         )}
       </AnimatePresence>
-
-      <style>{`
-        @keyframes shimmer {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(100%); }
-        }
-        
-        .animate-shimmer {
-          animation: shimmer 2s ease-in-out infinite;
-        }
-      `}</style>
     </>
   );
 };

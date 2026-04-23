@@ -1,4 +1,4 @@
-import type { CardStackProps } from "../types"
+import type { CardStackProps } from "../../../types/testimonial.types"
 import { 
   Star,
   ShieldCheck,
