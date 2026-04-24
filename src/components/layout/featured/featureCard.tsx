@@ -59,7 +59,7 @@ export default function FeatureCard() {
                                             >
                                                 <div className="flex items-start gap-4 mt-5 pb-2">
                                                  
-                                                    <p className="font-inter text-sm md:text-base text-white/50 leading-relaxed max-w-2xl">
+                                                    <p className=" text-sm md:text-base font-light font-roboto text-white/50 leading-relaxed max-w-2xl">
                                                         {serviceAdapter.getDesc(item)}
                                                     </p>
                                                 </div>

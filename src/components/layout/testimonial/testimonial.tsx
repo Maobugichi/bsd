@@ -37,7 +37,7 @@ export const Testimonial = forwardRef<HTMLElement>((_props, ref) => {
                         <span className="block whitespace-nowrap text-amber-500">With Consistency.</span>
                     </Header>
                     <Paragraph 
-                     className="font-inter text-base md:text-lg text-white/50 leading-relaxed max-w-2xl"
+                     className="font-roboto text-base md:text-lg text-white/50 leading-relaxed max-w-2xl"
                      content=' Hear directly from the developers, architects, and businesses who trusted BSD Light to deliver.'
                     />
                        

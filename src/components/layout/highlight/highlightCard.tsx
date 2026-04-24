@@ -16,9 +16,9 @@ export const HighlightCard = () => {
                         transition={{ delay: index * 0.08, duration: 0.4 }}
                         className="group py-5 md:py-8 hover:pl-2 md:hover:pl-4 cursor-pointer transition-all duration-300"
                     >
-                        {/* Mobile layout: stacked */}
+                      
                         <div className="flex flex-col gap-2 md:hidden">
-                            {/* Top row: metric + icon */}
+                        
                             <div className="flex items-center justify-between">
                                 <div>
                                     <span className="font-montserrat text-4xl font-bold text-[#1c1c1c] group-hover:text-amber-500 transition-colors duration-300 leading-none tabular-nums">
@@ -33,18 +33,18 @@ export const HighlightCard = () => {
                                 </div>
                             </div>
 
-                            {/* Bottom: title + desc */}
+                           
                             <div>
                                 <h3 className="font-montserrat text-xl font-bold text-[#1c1c1c] group-hover:text-amber-600 transition-colors duration-300 leading-tight">
                                     {highlightAdapter.getTitle(item)}
                                 </h3>
-                                <p className="font-inter text-xs text-stone-500 leading-relaxed mt-1">
+                                <p className="font-roboto text-xs text-stone-500 leading-relaxed mt-1">
                                     {highlightAdapter.getDesc(item)}
                                 </p>
                             </div>
                         </div>
 
-                        {/* Desktop layout: original horizontal row */}
+                        
                         <div className="hidden md:flex items-center gap-8">
                             <div className="shrink-0 w-36">
                                 <span className="font-montserrat text-5xl font-bold text-[#1c1c1c] group-hover:text-amber-500 transition-colors duration-300 leading-none tabular-nums">
@@ -65,7 +65,7 @@ export const HighlightCard = () => {
                                     <h3 className="font-montserrat text-5xl font-bold text-[#1c1c1c] group-hover:text-amber-600 transition-colors duration-300 leading-none">
                                         {highlightAdapter.getTitle(item)}
                                     </h3>
-                                    <p className="font-inter text-sm text-stone-500 leading-relaxed mt-1 max-w-xl">
+                                    <p className="font-roboto text-base text-stone-500 leading-relaxed mt-1 max-w-xl">
                                         {highlightAdapter.getDesc(item)}
                                     </p>
                                 </div>

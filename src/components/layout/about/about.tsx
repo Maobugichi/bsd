@@ -19,7 +19,7 @@ export const About = forwardRef<HTMLElement>((_props, ref) => {
             />
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent" />
 
-            <div className="relative z-10 w-[90%] lg:w-[85%] [@media(min-width:1020px)_and_(max-width:1024px)]:w-[85%] mx-auto flex lg:flex-row flex-col [@media(min-width:1020px)_and_(max-width:1024px)]:flex-col gap-20 md:gap-16 items-center">
+           <div className="relative z-10 w-[90%] lg:w-[85%] mx-auto flex lg:flex-row flex-col gap-20 md:gap-16 items-stretch">
                 <AboutDetails />
                 <AboutImage />
             </div>

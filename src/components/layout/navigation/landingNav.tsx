@@ -51,7 +51,7 @@ export const LandingNav = ({ scrollToSection, refs }: LandingNavProps) => {
                       onClick={() => handleNavClick(item.key)}
                       className={`
                         relative px-5 h-20 flex items-center
-                        font-montserrat text-base font-bold tracking-wide
+                        font-montserrat text-lg font-bold tracking-wide
                         transition-colors duration-300
                         ${isActive ? "text-amber-400" : "text-white/40 hover:text-white"}
                       `}

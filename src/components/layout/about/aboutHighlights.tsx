@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 export default function AboutHighlights() {
     return (
-        <div className="w-full grid grid-cols-2 divide-y divide-stone-300">
+        <div className="w-full grid cursor-pointer grid-cols-2 divide-y divide-stone-300">
             {companyHighlights.map((item, index) => (
                 <motion.div
                     key={item.id}

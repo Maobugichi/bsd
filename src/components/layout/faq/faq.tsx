@@ -68,7 +68,7 @@ export const FAQSection = forwardRef<HTMLElement>((_props, ref) => {
                   </AccordionTrigger>
 
                   <AccordionContent className="pl-12 pb-7">
-                    <p className="font-inter text-base md:text-lg text-stone-500 leading-relaxed max-w-3xl">
+                    <p className="font-roboto text-base md:text-lg text-stone-500 leading-relaxed max-w-3xl">
                       {faq.answer}
                     </p>
                   </AccordionContent>
