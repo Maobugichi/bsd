@@ -40,8 +40,7 @@ export const Testimonial = forwardRef<HTMLElement>((_props, ref) => {
                      className="font-roboto text-base md:text-lg text-white/50 leading-relaxed max-w-2xl"
                      content=' Hear directly from the developers, architects, and businesses who trusted BSD Light to deliver.'
                     />
-                       
-                    
+                          
                 </motion.div>
 
                 <StackedCards />

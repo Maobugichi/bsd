@@ -1,21 +1,52 @@
 import { Paragraph } from "@/components/ui/paragraph";
 import { Cta } from "@/components/ui/heroCta";
-import type { HeroRefs } from "../../../types/hero.types";
 import { HeroHeading } from "./hero-heading";
+import { createContext, useContext, useRef, useCallback, type RefObject, type ReactNode } from "react";
 
-import type { RefObject } from "react";
+type HeroContextValue = {
+    featureRef: RefObject<HTMLButtonElement>;
+    scrollToSection: (ref: RefObject<HTMLButtonElement>) => void;
+};
 
-type ScrollTarget = RefObject<HTMLElement | HTMLButtonElement>;
+const HeroContext = createContext<HeroContextValue | null>(null);
 
-export const HeroContent = ({refs, scrollToSection}: HeroRefs & { scrollToSection: (ref: ScrollTarget) => void }) => {
+export const useHeroContext = () => {
+    const ctx = useContext(HeroContext);
+    if (!ctx) throw new Error("useHeroContext must be used within HeroProvider");
+    return ctx;
+};
+
+export const HeroProvider = ({ children }: { children: ReactNode }) => {
+    const featureRef = useRef<HTMLButtonElement>(null);
+
+    const scrollToSection = useCallback((ref: RefObject<HTMLButtonElement>) => {
+        ref.current?.scrollIntoView({ behavior: "smooth" });
+    }, []);
+
     return (
-        <div className="w-full px-5 md:px-0 md:w-[80%] lg:w-[70%] [@media(min-width:1020px)_and_(max-width:1024px)]:w-[90%] text-white flex flex-col items-center gap-8 md:gap-5 pt-24 md:pt-28 pb-8">
+        <HeroContext.Provider value={{ featureRef, scrollToSection }}>
+            {children}
+        </HeroContext.Provider>
+    );
+};
+
+type HeroContentProps = {
+    paragraphContent?: string;
+};
+
+export const HeroContent = ({
+    paragraphContent = "BSD Light partners with developers, architects, and visionaries who refuse to compromise. Precision engineering. Global reach. Zero excuses.",
+}: HeroContentProps) => {
+    const { featureRef, scrollToSection } = useHeroContext();
+
+    return (
+        <div className="w-full px-5 md:px-0 mx-auto md:w-[80%] lg:w-[70%] xl:w-[75%] text-white flex flex-col items-center gap-8 md:gap-5 pt-32 md:pt-28 pb-8">
             <HeroHeading />
-           <Paragraph
-            content="BSD Light partners with developers, architects, and visionaries who refuse to compromise. Precision engineering. Global reach. Zero excuses."
-            className="text-center text-white/70 font-inter  md:max-w-xl md:w-[80%] "
+            <Paragraph
+                content={paragraphContent}
+                className="text-center text-white/70  md:max-w-xl md:w-[80%]"
             />
-            <Cta ref={refs.featureRef} onClick={() => scrollToSection(refs.featureRef)} />
+            <Cta ref={featureRef} onClick={() => scrollToSection(featureRef)} />
         </div>
-    )
-}
+    );
+};

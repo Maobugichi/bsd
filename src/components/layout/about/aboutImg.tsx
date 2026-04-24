@@ -9,8 +9,8 @@ export const AboutImage = () => {
         src={about600} 
         srcSet={`
           ${about400} 400w,
-          ${about600} 800w, 
-          ${about1000} 1200w
+          ${about600} 600w, 
+          ${about1000} 1000w
         `}
        
         sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 613px"

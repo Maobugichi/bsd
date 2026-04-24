@@ -1,6 +1,6 @@
 import { Paragraph } from "@/components/ui/paragraph"
 import { Header } from "../../ui/header"
-import AboutHighlights from "./aboutHighlights"
+import { AboutHighlights } from "./aboutHighlights"
 import { ShimmerBadge } from "@/components/ui/shimmerBadge"
 import { Info } from "lucide-react"
 import { motion } from "motion/react"

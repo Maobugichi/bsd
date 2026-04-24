@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { features } from '@/constants/feature.constant';
 import { serviceAdapter } from '@/adapter/serrvice-adapter';
 
-export default function FeatureCard() {
+export const FeatureCard = () => {
     const [activeId, setActiveId] = useState<string | null>(null);
 
     return (

@@ -1,8 +1,7 @@
 export const HeroHeading = () => {
     return (
         <h1
-            className="font-montserrat leading-[1.15] tracking-wide font-bold text-center w-full"
-            style={{ fontSize: 'clamp(2.8rem, 8vw, 4.5rem)' }}
+            className="font-montserrat leading-[1.15] tracking-wide font-bold text-center w-full text-[clamp(2.8rem,8vw,4.5rem)]"
         >
             <span className="block md:whitespace-nowrap">
                 <span className="text-white">The World&apos;s Best </span>

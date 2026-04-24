@@ -22,7 +22,7 @@ export const Footer = () => {
               <span className="font-montserrat text-2xl font-bold text-white tracking-tight">
                 BSD<span className="text-amber-500">Light</span>
               </span>
-              <p className="font-inter text-sm text-white/35 leading-relaxed mt-3 max-w-xs">
+              <p className="font-roboto text-sm text-white/35 leading-relaxed mt-3 max-w-xs">
                 Global construction, design, and infrastructure — built to last, delivered with precision.
               </p>
             </div>
@@ -68,7 +68,7 @@ export const Footer = () => {
                     <li key={item}>
                       
                        <a href="#"
-                        className="font-inter text-sm text-white/45 hover:text-amber-400
+                        className="font-roboto text-sm text-white/45 hover:text-amber-400
                                    transition-colors duration-300 flex items-center gap-2 group w-fit"
                       >
                         <span className="w-0 h-[1px] bg-amber-500 group-hover:w-2.5 transition-all duration-300 shrink-0" />
@@ -86,7 +86,7 @@ export const Footer = () => {
             <h3 className="font-montserrat text-[11px] font-bold tracking-[0.18em] uppercase text-white/25">
               Newsletter
             </h3>
-            <p className="font-inter text-sm text-white/35 leading-relaxed">
+            <p className="font-roboto text-sm text-white/35 leading-relaxed">
               Industry news and project updates, straight to your inbox.
             </p>
             <div className="flex flex-col gap-2">
@@ -118,7 +118,7 @@ export const Footer = () => {
 
         {/* Bottom bar */}
         <div className="border-t border-white/[0.06] py-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <span className="font-inter text-xs text-white/25">
+          <span className="font-roboto text-xs text-white/25">
             © {new Date().getFullYear()} BSDLight. All rights reserved.
           </span>
           <span className="font-inter text-xs text-white/15 tracking-[0.2em] uppercase">

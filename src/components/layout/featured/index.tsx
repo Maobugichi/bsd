@@ -1,15 +1,16 @@
 import { Header } from "../../ui/header";
 import { Paragraph } from "../../ui/paragraph";
-import FeatureCard from "./featureCard";
-import { forwardRef } from "react";
+import { FeatureCard } from "./featureCard";
 import { Layers } from "lucide-react";
 import { ShimmerBadge } from "../../ui/shimmerBadge";
 import { motion } from "motion/react";
+import { useNavigationContext } from "@/context/navigation.context";
 
-export const Feature = forwardRef<HTMLElement>((_props, ref) => {
+export const Feature = () => {
+    const { refs: { featureRef } } = useNavigationContext();
     return (
         <section
-            ref={ref}
+            ref={featureRef}
             className="font-montserrat bg-[#1c1c1c] py-20 md:py-28 h-fit flex flex-col text-white relative overflow-hidden"
         >
         
@@ -62,6 +63,6 @@ export const Feature = forwardRef<HTMLElement>((_props, ref) => {
             <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
         </section>
     );
-});
+}
 
 Feature.displayName = "Feature";

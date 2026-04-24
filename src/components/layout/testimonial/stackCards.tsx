@@ -19,8 +19,14 @@ export const StackedCards = () => {
     const [cardStack, setCardStack] = useState(cardsData);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isDragging, setIsDragging] = useState(false);
-    const [dragStartX, setDragStartX] = useState(0);
+
+    // Drag values as refs — they don't need to trigger re-renders,
+    // and refs are always fresh inside event handlers (no stale closure risk).
+    const isDraggingRef = useRef(false);
+    const dragStartXRef = useRef(0);
+    const dragOffsetRef = useRef(0);
+
+    // dragOffset as state only for driving the transform style
     const [dragOffset, setDragOffset] = useState(0);
 
     const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -56,9 +62,6 @@ export const StackedCards = () => {
     const toggleAutoPlay = () => setIsAutoPlaying((v) => !v);
 
     // ── Autoplay ──────────────────────────────────────────────────────────────
-    // moveToNext is wrapped in useCallback so it's a stable reference.
-    // The interval therefore always calls the latest version without needing
-    // cardStack in the dep array (which caused the original drift/stale bug).
 
     const stopAutoPlay = useCallback(() => {
         if (intervalRef.current) {
@@ -80,47 +83,58 @@ export const StackedCards = () => {
 
     // ── Hover ─────────────────────────────────────────────────────────────────
 
-    const handleMouseEnter = () => setIsAutoPlaying(false);
-    const handleMouseLeave = () => {
-        if (!isDragging) setIsAutoPlaying(true);
-    };
+    const handleMouseEnter = useCallback(() => setIsAutoPlaying(false), []);
+    const handleMouseLeave = useCallback(() => {
+        if (!isDraggingRef.current) setIsAutoPlaying(true);
+    }, []);
 
     // ── Drag ──────────────────────────────────────────────────────────────────
 
-    const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
-        setIsDragging(true);
+    const handleDragStart = useCallback((e: React.MouseEvent | React.TouchEvent) => {
+        isDraggingRef.current = true;
         setIsAutoPlaying(false);
+        dragStartXRef.current = "touches" in e ? e.touches[0].clientX : e.clientX;
+    }, []);
+
+    const handleDragMove = useCallback((e: React.MouseEvent | React.TouchEvent) => {
+        if (!isDraggingRef.current) return;
         const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
-        setDragStartX(clientX);
-    };
+        const offset = clientX - dragStartXRef.current;
+        dragOffsetRef.current = offset;
+        setDragOffset(offset); // only used for transform style
+    }, []);
 
-    const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
-        if (!isDragging) return;
-        const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
-        setDragOffset(clientX - dragStartX);
-    };
+    const handleDragEnd = useCallback(() => {
+        if (!isDraggingRef.current) return;
+        isDraggingRef.current = false;
 
-   const handleDragEnd = () => {
-    if (!isDragging) return;
-
-    setIsDragging(false);
-
-    if (Math.abs(dragOffset) > 100) {
-        if (dragOffset > 0) {
-            moveToPrevious();
-        } else {
-            moveToNext();
+        const offset = dragOffsetRef.current;
+        if (Math.abs(offset) > 100) {
+                    if (offset > 0) {
+                moveToPrevious();
+            } else {
+                moveToNext();
+            }
         }
-    }
 
-    setDragOffset(0);
-    setIsAutoPlaying(true);
-    };
+        dragOffsetRef.current = 0;
+        setDragOffset(0);
+        setIsAutoPlaying(true);
+    }, [moveToNext, moveToPrevious]);
 
-    
+    // Guard: don't fire onClick if the user just finished a drag
+    const handleCardClick = useCallback(() => {
+        if (Math.abs(dragOffsetRef.current) > 5) return;
+        moveToNext();
+    }, [moveToNext]);
+
+    // ── Render ────────────────────────────────────────────────────────────────
 
     return (
-        <div className="relative w-full h-fit [@media(max-width:380px)]:min-h-[85vh] [@media(min-width:400px)_and_(max-width:412px)]:min-h-[55vh] [@media(min-width:350px)_and_(max-width:360px)]:min-h-[84vh] [@media(min-width:1020px)_and_(max-width:1024px)]:min-h-[50vh] min-h-[70vh] md:min-h-[45vh] grid md:h-96 mx-auto mt-20">
+        <div
+            className="relative w-full h-fit [@media(max-width:380px)]:min-h-[85vh] [@media(min-width:400px)_and_(max-width:412px)]:min-h-[55vh] [@media(min-width:350px)_and_(max-width:360px)]:min-h-[84vh] [@media(min-width:1020px)_and_(max-width:1024px)]:min-h-[50vh] min-h-[70vh] md:min-h-[45vh] grid md:h-96 mx-auto mt-20"
+            style={{ touchAction: "none", userSelect: "none" }}
+        >
             <div
                 className="relative w-full h-full"
                 onMouseEnter={handleMouseEnter}
@@ -135,7 +149,7 @@ export const StackedCards = () => {
                     const IconComponent = card.Icon;
 
                     const transform =
-                        isTop && isDragging
+                        isTop && dragOffset !== 0
                             ? `translateX(${dragOffset}px) translateY(${baseY}px) scale(${baseScale})`
                             : `translateY(${baseY}px) scale(${baseScale})`;
 
@@ -144,12 +158,12 @@ export const StackedCards = () => {
                             key={card.id}
                             {...card}
                             isTop={isTop}
-                            isDragging={isDragging}
+                            isDragging={isTop && dragOffset !== 0}
                             transform={transform}
                             onDragStart={handleDragStart}
                             onDragMove={handleDragMove}
                             onDragEnd={handleDragEnd}
-                            onClick={moveToNext}
+                            onClick={handleCardClick}
                             zIndex={zIndex}
                         >
                             <div className="flex flex-col h-fit py-20 px-6 md:px-10 gap-6">

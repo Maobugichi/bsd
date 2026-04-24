@@ -1,11 +1,13 @@
 import { AboutDetails } from "./aboutDetails"
 import { AboutImage } from "./aboutImg"
-import { forwardRef } from "react"
+import { useNavigationContext } from "@/context/navigation.context"
 
-export const About = forwardRef<HTMLElement>((_props, ref) => {
+export const About = () => {
+     const { refs: { aboutRef } } = useNavigationContext();
+    
     return (
         <section
-            ref={ref}
+            ref={aboutRef}
             className="relative h-fit font-montserrat py-20 md:py-28 bg-[#f5f0eb] overflow-hidden"
         >
            
@@ -27,6 +29,6 @@ export const About = forwardRef<HTMLElement>((_props, ref) => {
             <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
         </section>
     )
-})
+}
 
 About.displayName = "About"
