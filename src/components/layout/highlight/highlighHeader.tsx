@@ -4,7 +4,7 @@ import { ShimmerBadge } from "@/components/ui/shimmerBadge"
 import { TrendingUp } from "lucide-react"
 import { motion } from "motion/react"
 
-export const HightlightHeader = () => {
+export const HighlightHeader = () => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}

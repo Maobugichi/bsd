@@ -1,5 +1,5 @@
 import { HighlightCard } from './highlightCard';
-import { HightlightHeader } from './highlighHeader';
+import { HighlightHeader } from './highlighHeader';
 import { HighlightCta } from './highlightCta';
 
 export const CompanyHighlights = () => {
@@ -18,7 +18,7 @@ export const CompanyHighlights = () => {
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent" />
 
             <div className="relative z-10 w-[90%] lg:w-[85%] [@media(min-width:1020px)_and_(max-width:1024px)]:w-[85%] mx-auto grid gap-14">
-                <HightlightHeader />
+                <HighlightHeader />
                 <HighlightCard />
                 <HighlightCta />
             </div>

@@ -1,4 +1,4 @@
-import { HighlightItem } from "../types";
+import { HighlightItem } from "@/types/highlight.types";
 
 export const highlightAdapter = {
   getIcon: (item: HighlightItem) => item.icon,

@@ -19,13 +19,13 @@ export const Controls = ({
     toggleAutoPlay,
     goToIndex,
 }: ControlsProps) => (
-    <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-[#1c1c1c] border border-white/10 backdrop-blur-md rounded-2xl px-4 py-2.5">
+    <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-[#1c1c1c] border border-white/10 backdrop-blur-md px-4 py-2.5">
         <button
             onClick={moveToPrevious}
-            className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-amber-500/10 hover:scale-110 group"
+            className="w-9 h-9 flex items-center justify-center transition-colors duration-300 hover:bg-amber-500/10 group"
             aria-label="Previous testimonial"
         >
-            <ChevronLeft className="w-4 h-4 text-white/40 group-hover:text-amber-400 transition-colors" />
+            <ChevronLeft size={16} className="text-white/40 group-hover:text-amber-400 transition-colors" />
         </button>
 
         {/* Dots */}
@@ -34,37 +34,35 @@ export const Controls = ({
                 <button
                     key={index}
                     onClick={() => goToIndex(index)}
-                    className={`h-1.5 rounded-full transition-all duration-300
-                        ${index === currentIndex
+                    className={`h-1.5 transition-all duration-300 ${
+                        index === currentIndex
                             ? 'bg-amber-500 w-6'
                             : 'bg-white/20 w-1.5 hover:bg-white/40'
-                        }`}
+                    }`}
                     aria-label={`Go to testimonial ${index + 1}`}
                 />
             ))}
         </div>
 
-        {/* Divider */}
         <div className="w-px h-5 bg-white/10" />
 
         <button
             onClick={toggleAutoPlay}
-            className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-amber-500/10 hover:scale-110 group"
+            className="w-9 h-9 flex items-center justify-center transition-colors duration-300 hover:bg-amber-500/10 group"
             aria-label={isAutoPlaying ? 'Pause auto-play' : 'Start auto-play'}
         >
-            {isAutoPlaying ? (
-                <Pause className="w-3 h-3 text-white/40 group-hover:text-amber-400 transition-colors" />
-            ) : (
-                <Play className="w-3 h-3 text-white/40 group-hover:text-amber-400 transition-colors" />
-            )}
+            {isAutoPlaying
+                ? <Pause size={12} className="text-white/40 group-hover:text-amber-400 transition-colors" />
+                : <Play  size={12} className="text-white/40 group-hover:text-amber-400 transition-colors" />
+            }
         </button>
 
         <button
             onClick={moveToNext}
-            className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-300 hover:bg-amber-500/10 hover:scale-110 group"
+            className="w-9 h-9 flex items-center justify-center transition-colors duration-300 hover:bg-amber-500/10 group"
             aria-label="Next testimonial"
         >
-            <ChevronRight className="w-4 h-4 text-white/40 group-hover:text-amber-400 transition-colors" />
+            <ChevronRight size={16} className="text-white/40 group-hover:text-amber-400 transition-colors" />
         </button>
     </div>
 );

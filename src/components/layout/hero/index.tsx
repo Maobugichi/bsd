@@ -24,7 +24,7 @@ const HeroSection = () => {
     return (
         <section
             ref={heroRef}
-            className="min-h-[100svh] [@media(width:1024px)_and_(height:600px)]:min-h-[120vh] relative overflow-hidden grid place-items-center"
+            className="min-h-[100svh] [@media(width:1024px)_and_(height:600px)]:min-h-[120vh] relative overflow-hidden grid place-items-center mt-10"
         >
             <HeroBackground y={y} opacity={opacity} />
             <div className="relative z-10 w-full">

@@ -1,5 +1,5 @@
 interface IndicatorsProps {
-  slides: any[];
+  slides:{ id: string | number }[];
   currentSlide: number;
   goToSlide: (index: number) => void;
 }
@@ -19,8 +19,8 @@ export const SlideIndicators = ({ slides, currentSlide, goToSlide }: IndicatorsP
             className={`
               block rounded-full transition-all duration-300 ease-out
               ${index === currentSlide
-                ? 'bg-white w-4 h-1.5 sm:w-6 sm:h-2' // Active: smaller on mobile
-                : 'bg-white/50 w-1.5 h-1.5 sm:w-2 sm:h-2 group-hover:bg-white/75' // Inactive: tiny on mobile
+                ? 'bg-white w-4 h-1.5 sm:w-6 sm:h-2' 
+                : 'bg-white/50 w-1.5 h-1.5 sm:w-2 sm:h-2 group-hover:bg-white/75' 
               }
             `}
           />

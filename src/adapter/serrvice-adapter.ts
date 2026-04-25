@@ -1,11 +1,11 @@
-import type { ServiceType } from "./types";
+import type { FeatureType } from "@/types/feature.types";
 
 export const serviceAdapter = {
-  getIcon: (item: ServiceType) => item.icon,
-  getColor: (item: ServiceType) => item.color,  
-  getTitle: (item: ServiceType) => item.title,
-  getDesc: (item: ServiceType) => item.description,
-  getMetric: (item: ServiceType) => item.metric,
-  getUnit: (item: ServiceType) => item.unit,
-  getGrid: (item: ServiceType) => item.gridClass,
+  getIcon: (item: FeatureType) => item.icon,
+  getColor: (item:  FeatureType) => item.color,  
+  getTitle: (item: FeatureType) => item.title,
+  getDesc: (item:  FeatureType) => item.description,
+  getMetric: (item:  FeatureType) => item.metric,
+  getUnit: (item:  FeatureType) => item.unit,
+  getGrid: (item: FeatureType) => item.gridClass,
 };

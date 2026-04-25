@@ -1,4 +1,4 @@
-import type { SlideType } from "./types";
+import type { SlideType } from "../../../types/gallery.types";
 
 interface SlideProps {
     slide:SlideType;
@@ -21,11 +21,11 @@ export const Slide = ({slide, isActive}:SlideProps) => {
             style={{ backgroundColor: slide.bg }}
           >
            
-            <div className="absolute inset-0 bg-black/20 z-10 rounded-2xl" />
+            <div className="absolute inset-0 bg-black/20 z-10 rounded-none" />
             <img
               src={slide.image}
               alt={`Construction project ${slide.id}`}
-              className="w-full h-full object-cover rounded-2xl"
+              className="w-full h-full object-cover rounded-none"
               loading="lazy"
             />
           </div>

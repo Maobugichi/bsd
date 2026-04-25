@@ -2,78 +2,88 @@ import { highlight } from '../../../constants/highlight.constant';
 import { highlightAdapter } from '@/adapter/highlightAdapter';
 import { motion } from 'motion/react';
 
-export const HighlightCard = () => {
-    return (
-        <div className="w-full flex flex-col divide-y divide-stone-200">
-            {highlight.map((item, index) => {
-                const Icon = highlightAdapter.getIcon(item);
-                return (
-                    <motion.div
-                        key={item.id}
-                        initial={{ opacity: 0, y: 16 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.08, duration: 0.4 }}
-                        className="group py-5 md:py-8 hover:pl-2 md:hover:pl-4 cursor-pointer transition-all duration-300"
-                    >
-                      
-                        <div className="flex flex-col gap-2 md:hidden">
-                        
-                            <div className="flex items-center justify-between">
-                                <div>
-                                    <span className="font-montserrat text-4xl font-bold text-[#1c1c1c] group-hover:text-amber-500 transition-colors duration-300 leading-none tabular-nums">
-                                        {highlightAdapter.getMetric(item)}
-                                    </span>
-                                    <span className="block text-[10px] text-stone-400 font-inter tracking-widest uppercase mt-1">
-                                        {highlightAdapter.getUnit(item)}
-                                    </span>
-                                </div>
-                                <div className="shrink-0 w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300">
-                                    <Icon size={16} className="text-amber-500" />
-                                </div>
-                            </div>
+// ── Types ─────────────────────────────────────────────────────────────────────
 
-                           
-                            <div>
-                                <h3 className="font-montserrat text-xl font-bold text-[#1c1c1c] group-hover:text-amber-600 transition-colors duration-300 leading-tight">
-                                    {highlightAdapter.getTitle(item)}
-                                </h3>
-                                <p className="font-roboto text-xs text-stone-500 leading-relaxed mt-1">
-                                    {highlightAdapter.getDesc(item)}
-                                </p>
-                            </div>
+interface HighlightItem {
+    metric: string;
+    unit: string;
+    title: string;
+    desc: string;
+    Icon: React.ElementType;
+}
+
+// ── Sub-components ────────────────────────────────────────────────────────────
+
+const Metric = ({ metric, unit }: Pick<HighlightItem, "metric" | "unit">) => (
+    <div className="shrink-0">
+        <span className="font-montserrat text-4xl md:text-5xl font-bold text-[#1c1c1c] group-hover:text-amber-500 transition-colors duration-300 leading-none tabular-nums">
+            {metric}
+        </span>
+        <span className="block text-[10px] md:text-xs text-stone-400 font-inter tracking-widest uppercase mt-1">
+            {unit}
+        </span>
+    </div>
+);
+
+const IconBadge = ({ Icon }: { Icon: React.ElementType }) => (
+    <div className="shrink-0 w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300">
+        <Icon size={18} className="text-amber-500" />
+    </div>
+);
+
+const Content = ({ title, desc }: Pick<HighlightItem, "title" | "desc">) => (
+    <div className="min-w-0">
+        <h3 className="font-montserrat text-xl md:text-5xl font-bold text-[#1c1c1c] group-hover:text-amber-600 transition-colors duration-300 leading-tight md:leading-none">
+            {title}
+        </h3>
+        <p className="font-roboto text-xs md:text-base text-stone-500 leading-relaxed mt-1 md:max-w-xl">
+            {desc}
+        </p>
+    </div>
+);
+
+// ── HighlightCard ─────────────────────────────────────────────────────────────
+
+export const HighlightCard = () => (
+    <div className="w-full flex flex-col divide-y divide-stone-200">
+        {highlight.map((item, index) => {
+            const Icon    = highlightAdapter.getIcon(item);
+            const metric  = highlightAdapter.getMetric(item);
+            const unit    = highlightAdapter.getUnit(item);
+            const title   = highlightAdapter.getTitle(item);
+            const desc    = highlightAdapter.getDesc(item);
+
+            return (
+                <motion.div
+                    key={item.id}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.08, duration: 0.4 }}
+                    className="group py-5 md:py-8 cursor-pointer transition-all duration-300 hover:translate-x-1 md:hover:translate-x-2"
+                >
+                    {/* Mobile */}
+                    <div className="flex flex-col gap-3 md:hidden">
+                        <div className="flex items-center justify-between">
+                            <Metric metric={metric} unit={unit} />
+                            <IconBadge Icon={Icon} />
                         </div>
+                        <Content title={title} desc={desc} />
+                    </div>
 
-                        
-                        <div className="hidden md:flex items-center gap-8">
-                            <div className="shrink-0 w-36">
-                                <span className="font-montserrat text-5xl font-bold text-[#1c1c1c] group-hover:text-amber-500 transition-colors duration-300 leading-none tabular-nums">
-                                    {highlightAdapter.getMetric(item)}
-                                </span>
-                                <span className="block text-xs text-stone-400 font-inter tracking-widest uppercase mt-1">
-                                    {highlightAdapter.getUnit(item)}
-                                </span>
-                            </div>
-
-                            <div className="shrink-0 w-px h-14 bg-stone-200 group-hover:bg-amber-400 transition-colors duration-300" />
-
-                            <div className="flex items-center gap-5 flex-1 min-w-0">
-                                <div className="shrink-0 w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors duration-300">
-                                    <Icon size={18} className="text-amber-500" />
-                                </div>
-                                <div className="min-w-0">
-                                    <h3 className="font-montserrat text-5xl font-bold text-[#1c1c1c] group-hover:text-amber-600 transition-colors duration-300 leading-none">
-                                        {highlightAdapter.getTitle(item)}
-                                    </h3>
-                                    <p className="font-roboto text-base text-stone-500 leading-relaxed mt-1 max-w-xl">
-                                        {highlightAdapter.getDesc(item)}
-                                    </p>
-                                </div>
-                            </div>
+                    {/* Desktop */}
+                    <div className="hidden md:flex items-center gap-8">
+                        <div className="shrink-0 w-36">
+                            <Metric metric={metric} unit={unit} />
                         </div>
-                    </motion.div>
-                );
-            })}
-        </div>
-    );
-};
+                        <div className="shrink-0 w-px h-14 bg-stone-200 group-hover:bg-amber-400 transition-colors duration-300" />
+                        <div className="flex items-center gap-5 flex-1 min-w-0">
+                            <IconBadge Icon={Icon} />
+                            <Content title={title} desc={desc} />
+                        </div>
+                    </div>
+                </motion.div>
+            );
+        })}
+    </div>
+);
