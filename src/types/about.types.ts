@@ -1,4 +1,4 @@
-import { colorVariants } from "./constants/color-variants";
+import { colorVariants } from "@/constants/color-variants";
 import type { FC } from "react";
 
 
