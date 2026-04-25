@@ -7,13 +7,22 @@ interface StackProps {
     buttons:{className:string,content:string, variants:{ hover: { x:number, y:number}}}[];
 }
 
-export const StackBtn= forwardRef<HTMLElement, StackProps>(({className,buttons},ref) => {
-    return(
-          <motion.div 
-            className={`${className}`}
-            whileHover="hover"
-            >
-                {buttons.map((buttonItem:{className:string, content:string, variants: { hover: { x: number; y: number } }}, i:number ) => (<Button ref={ref} key={i} content={buttonItem.content} className={buttonItem.className} variants={buttonItem.variants}/>))}
-          </motion.div>
-    )
-})
+export const StackBtn = forwardRef<HTMLButtonElement, StackProps>(
+  ({ className, buttons }, ref) => {
+    return (
+      <motion.div className={className} whileHover="hover">
+        {buttons.map((buttonItem, i) => (
+          <Button
+            ref={ref}
+            key={i}
+           
+            className={buttonItem.className}
+            variants={buttonItem.variants}
+          >
+            {buttonItem.content}
+          </Button>
+        ))}
+      </motion.div>
+    );
+  }
+);

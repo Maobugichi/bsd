@@ -11,7 +11,7 @@ export const NavButton = () => {
 
     return(
         <div className="flex h-full items-center justify-between">
-            {details.map((detail:{content:string, className:string}) => <Button className={`${detail.className} `} content={detail.content}/>)}
+            {details.map((detail:{content:string, className:string}) => <Button className={`${detail.className} `} >{detail.content}</Button>)}
         </div>
     )
 }
