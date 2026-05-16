@@ -1,4 +1,4 @@
-import { NAV_LINKS } from "./footer";
+import { NAV_LINKS } from ".";
 import { SectionLabel } from "./sectionLabel";
 
 export const NavColumns = () => (

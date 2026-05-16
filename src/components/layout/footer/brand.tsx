@@ -1,4 +1,4 @@
-import { CONTACT_ITEMS } from "./footer";
+import { CONTACT_ITEMS } from ".";
 
 export const Brand = () => (
     <div className="md:col-span-4 flex flex-col gap-7">

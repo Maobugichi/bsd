@@ -1,7 +1,7 @@
 import { useScroll, useSpring, useTransform } from "motion/react";
 import { useNavigationContext } from "@/context/navigation.context";
-import { HeroBackground } from "./hero-background";
-import { HeroContent, HeroProvider } from "./hero-content";
+import { HeroBackground } from "./heroBackground";
+import { HeroContent, HeroProvider } from "./heroContent";
 
 const HeroSection = () => {
     const { refs: { heroRef } } = useNavigationContext();

@@ -2,7 +2,6 @@ import { highlight } from '../../../constants/highlight.constant';
 import { highlightAdapter } from '@/adapter/highlightAdapter';
 import { motion } from 'motion/react';
 
-// ── Types ─────────────────────────────────────────────────────────────────────
 
 interface HighlightItem {
     metric: string;
@@ -12,7 +11,7 @@ interface HighlightItem {
     Icon: React.ElementType;
 }
 
-// ── Sub-components ────────────────────────────────────────────────────────────
+
 
 const Metric = ({ metric, unit }: Pick<HighlightItem, "metric" | "unit">) => (
     <div className="shrink-0">
@@ -42,7 +41,7 @@ const Content = ({ title, desc }: Pick<HighlightItem, "title" | "desc">) => (
     </div>
 );
 
-// ── HighlightCard ─────────────────────────────────────────────────────────────
+
 
 export const HighlightCard = () => (
     <div className="w-full flex flex-col divide-y divide-stone-200">
@@ -62,7 +61,7 @@ export const HighlightCard = () => (
                     transition={{ delay: index * 0.08, duration: 0.4 }}
                     className="group py-5 md:py-8 cursor-pointer transition-all duration-300 hover:translate-x-1 md:hover:translate-x-2"
                 >
-                    {/* Mobile */}
+                   
                     <div className="flex flex-col gap-3 md:hidden">
                         <div className="flex items-center justify-between">
                             <Metric metric={metric} unit={unit} />
@@ -71,7 +70,7 @@ export const HighlightCard = () => (
                         <Content title={title} desc={desc} />
                     </div>
 
-                    {/* Desktop */}
+                  
                     <div className="hidden md:flex items-center gap-8">
                         <div className="shrink-0 w-36">
                             <Metric metric={metric} unit={unit} />

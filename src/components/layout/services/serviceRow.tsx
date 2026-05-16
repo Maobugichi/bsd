@@ -10,7 +10,7 @@ interface FeatureRowProps {
     onToggle: () => void;
 }
 
-export const FeatureRow = ({ item, index, isOpen, onToggle }: FeatureRowProps) => {
+export const ServiceRow = ({ item, index, isOpen, onToggle }: FeatureRowProps) => {
     const title  = serviceAdapter.getTitle(item);
     const desc   = serviceAdapter.getDesc(item);
     const metric = serviceAdapter.getMetric(item);

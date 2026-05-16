@@ -21,7 +21,7 @@ export const FAQSection = forwardRef<HTMLElement>((_props, ref) => {
 
       <div className="relative z-10 w-[90%] lg:w-[85%] mx-auto grid gap-12">
 
-        {/* Header */}
+     
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ export const FAQSection = forwardRef<HTMLElement>((_props, ref) => {
           </Header>
         </motion.div>
 
-        {/* FAQ list */}
+        
         <div className="flex flex-col divide-y divide-stone-200">
           {faqs.map((faq, index) => (
             <motion.div
@@ -68,7 +68,7 @@ export const FAQSection = forwardRef<HTMLElement>((_props, ref) => {
                   </AccordionTrigger>
 
                   <AccordionContent className="pl-12 pb-7">
-                    <p className="font-roboto text-base md:text-lg text-stone-500 leading-relaxed max-w-3xl">
+                    <p className="font-roboto text-base md:text-lg text-stone-500 font-light max-w-3xl">
                       {faq.answer}
                     </p>
                   </AccordionContent>

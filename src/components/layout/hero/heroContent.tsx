@@ -1,25 +1,13 @@
+import { useRef, useCallback, type ReactNode } from "react";
 import { Paragraph } from "@/components/ui/paragraph";
 import { Cta } from "@/components/ui/heroCta";
-import { HeroHeading } from "./hero-heading";
-import { createContext, useContext, useRef, useCallback, type RefObject, type ReactNode } from "react";
-
-type HeroContextValue = {
-    featureRef: RefObject<HTMLButtonElement>;
-    scrollToSection: (ref: RefObject<HTMLButtonElement>) => void;
-};
-
-const HeroContext = createContext<HeroContextValue | null>(null);
-
-export const useHeroContext = () => {
-    const ctx = useContext(HeroContext);
-    if (!ctx) throw new Error("useHeroContext must be used within HeroProvider");
-    return ctx;
-};
+import { HeroHeading } from "./heroHeading";
+import { HeroContext, useHeroContext } from "./heroContext";
 
 export const HeroProvider = ({ children }: { children: ReactNode }) => {
     const featureRef = useRef<HTMLButtonElement>(null);
 
-    const scrollToSection = useCallback((ref: RefObject<HTMLButtonElement>) => {
+    const scrollToSection = useCallback((ref: React.RefObject<HTMLButtonElement>) => {
         ref.current?.scrollIntoView({ behavior: "smooth" });
     }, []);
 
@@ -40,11 +28,11 @@ export const HeroContent = ({
     const { featureRef, scrollToSection } = useHeroContext();
 
     return (
-        <div className="w-full px-5 md:px-0 mx-auto md:w-[80%] lg:w-[70%] xl:w-[75%] text-white flex flex-col items-center gap-8 md:gap-5 pt-32 md:pt-28 pb-8">
+        <div className="w-full px-5 md:px-0 mx-auto md:w-[80%] lg:w-[70%] xl:w-[75%] text-white flex flex-col items-center gap-8 md:gap-5 pt- md:pt-28 pb-8">
             <HeroHeading />
             <Paragraph
                 content={paragraphContent}
-                className="text-center text-white/70  md:max-w-xl md:w-[80%]"
+                className="text-center text-white/70 md:max-w-xl md:w-[80%]"
             />
             <Cta ref={featureRef} onClick={() => scrollToSection(featureRef)} />
         </div>

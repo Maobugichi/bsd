@@ -1,6 +1,6 @@
 import { Header } from "../../ui/header";
 import { Paragraph } from "../../ui/paragraph";
-import { FeatureCard } from "./featureCard";
+import { ServiceCard } from "./serviceCard";
 import { Layers } from "lucide-react";
 import { ShimmerBadge } from "../../ui/shimmerBadge";
 import { NoiseTexture } from "@/components/ui/noiseTexture";
@@ -42,7 +42,7 @@ export const Feature = () => {
                     />
                 </motion.div>
 
-                <FeatureCard />
+                <ServiceCard />
             </div>
 
             <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />

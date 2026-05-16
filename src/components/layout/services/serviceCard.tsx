@@ -1,16 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { features } from '@/constants/feature.constant';
-import { FeatureRow } from './featureRow';
-
-
+import { ServiceRow } from './serviceRow';
 
 type FeatureId = typeof features[number]['id'];
 
 
-
-
-export const FeatureCard = () => {
+export const ServiceCard = () => {
     const [activeId, setActiveId] = useState<FeatureId | null>(null);
 
     const handleToggle = (id: FeatureId) =>
@@ -29,7 +25,7 @@ export const FeatureCard = () => {
                       
                         style={{ display: 'contents' }}
                     >
-                        <FeatureRow
+                        <ServiceRow
                             item={item}
                             index={i}
                             isOpen={activeId === item.id}

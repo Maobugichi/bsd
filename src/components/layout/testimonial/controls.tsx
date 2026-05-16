@@ -19,7 +19,7 @@ export const Controls = ({
     toggleAutoPlay,
     goToIndex,
 }: ControlsProps) => (
-    <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-[#1c1c1c] border border-white/10 backdrop-blur-md px-4 py-2.5">
+    <div className="flex items-center gap-3 bg-[#1c1c1c] border border-white/10 backdrop-blur-md px-4 h-25">
         <button
             onClick={moveToPrevious}
             className="w-9 h-9 flex items-center justify-center transition-colors duration-300 hover:bg-amber-500/10 group"
@@ -28,7 +28,7 @@ export const Controls = ({
             <ChevronLeft size={16} className="text-white/40 group-hover:text-amber-400 transition-colors" />
         </button>
 
-        {/* Dots */}
+        
         <div className="flex gap-1.5 items-center">
             {Array.from({ length: total }).map((_, index) => (
                 <button
