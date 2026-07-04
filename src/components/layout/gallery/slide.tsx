@@ -25,7 +25,7 @@ export const Slide = ({slide, isActive}:SlideProps) => {
             <img
               src={slide.image}
               alt={`Construction project ${slide.id}`}
-              className="w-full h-full object-cover rounded-none"
+              className="w-full h-full object-fill rounded-none"
               loading="lazy"
             />
           </div>

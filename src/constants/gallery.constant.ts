@@ -1,15 +1,13 @@
-import slide1 from "../assets/bsd-3.png"
-import slide2 from "../assets/bsd-4.png"
-import slide3 from "../assets/bsd-5.png"
-import slide4 from "../assets/bsd-6.png"
-import slide5 from "../assets/bsd-7.png"
-import slide6 from "../assets/bsd-8.png"
-import slide7 from "../assets/bsd-9.png"
-import slide8 from "../assets/bsd-0.png"
-import slide9 from "../assets/bsd-11.png"
-import slide10 from "../assets/bsd-12.png"
-import slide11 from "../assets/bsd-13.png"
-import slide12 from "../assets/bsd-14.png"
+import slide1 from "../assets/bsd-3.jpeg"
+import slide2 from "../assets/bsd-4.jpeg"
+import slide3 from "../assets/bsd-5.jpeg"
+import slide4 from "../assets/bsd-6.jpeg"
+import slide5 from "../assets/bsd-7.jpeg"
+import slide6 from "../assets/bsd-8.jpeg"
+import slide7 from "../assets/bsd-9.jpeg"
+import slide8 from "../assets/bsd-0.jpeg"
+import slide9 from "../assets/bsd-11.jpeg"
+
 
 
 
@@ -23,9 +21,6 @@ export const slides = [
     { id: 7, image: slide7, bg: '#FDEBDD' },
     { id: 8, image: slide8, bg: '#DCF0F2' },
     { id: 9, image: slide9, bg: '#FDEBDD' },
-    { id: 10, image: slide10, bg: '#DCF0F2' },
-    { id: 11, image: slide11, bg: '#FDEBDD' },
-    { id: 12, image: slide12, bg: '#DCF0F2' },
   ];
 
   
