@@ -19,6 +19,9 @@ import slide18 from "../assets/rehabilitation.png"
 import slide19 from "../assets/road.png"
 import slide20 from "../assets/seasoning.png"
 import slide21 from "../assets/unilev.png"
+import slide22 from "../assets/ttt.jpeg"
+import slide23 from "../assets/vvv.jpeg"
+import slide24 from "../assets/kkk.jpeg"
 
 
 
@@ -44,6 +47,9 @@ export const slides = [
     { id: 19, image: slide19, bg: '#FDEBDD' },
     { id: 20, image: slide20, bg: '#DCF0F2' },
     { id: 21, image: slide21, bg: '#FDEBDD' },
+    { id: 22, image: slide22, bg: '#FDEBDD' },
+    { id: 23, image: slide23, bg: '#DCF0F2' },
+    { id: 24, image: slide24, bg: '#FDEBDD' },
   ];
 
   
