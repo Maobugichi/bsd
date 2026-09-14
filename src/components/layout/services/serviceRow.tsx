@@ -67,7 +67,7 @@ export const ServiceRow = ({ item, index, isOpen, onToggle }: FeatureRowProps) =
                         className="overflow-hidden"
                     >
                         <div className="pl-14 pb-8 flex flex-col gap-4">
-                            <p className="text-sm md:text-base font-light font-roboto text-white/50 leading-relaxed max-w-2xl">
+                            <p className="text-md md:text-lg font-light font-roboto text-white/50 leading-relaxed max-w-2xl">
                                 {desc}
                             </p>
                          

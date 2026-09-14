@@ -32,7 +32,7 @@ export const FAQSection = forwardRef<HTMLElement>((_props, ref) => {
           <ShimmerBadge text="FAQ" icon={HelpCircle} width="w-32" />
           <Header
             level={2}
-            className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-[#1c1c1c] leading-tight"
+            className="font-manrope text-3xl md:text-4xl lg:text-5xl font-bold text-[#1c1c1c] leading-tight"
           >
             <span className="block whitespace-nowrap">Got Questions?</span>
             <span className="block whitespace-nowrap text-amber-500">We've Got Answers.</span>
@@ -53,7 +53,7 @@ export const FAQSection = forwardRef<HTMLElement>((_props, ref) => {
                 <AccordionItem value={`item-${index}`} className="border-none">
                   <AccordionTrigger
                     className="group w-full text-left py-7 flex items-start justify-between gap-6
-                               font-montserrat text-2xl md:text-4xl lg:text-5xl font-bold text-[#1c1c1c]
+                               font-manrope text-2xl md:text-4xl lg:text-5xl font-bold text-[#1c1c1c]
                                hover:text-amber-500 transition-colors duration-300
                                [&>svg]:text-stone-300 [&>svg]:size-6 [&>svg]:shrink-0
                                hover:[&>svg]:text-amber-400 [&>svg]:transition-colors [&>svg]:duration-300
@@ -68,7 +68,7 @@ export const FAQSection = forwardRef<HTMLElement>((_props, ref) => {
                   </AccordionTrigger>
 
                   <AccordionContent className="pl-12 pb-7">
-                    <p className="font-roboto text-base md:text-lg text-stone-500 font-light max-w-3xl">
+                    <p className="font-roboto text-md md:text-lg text-stone-500 font-light max-w-3xl">
                       {faq.answer}
                     </p>
                   </AccordionContent>

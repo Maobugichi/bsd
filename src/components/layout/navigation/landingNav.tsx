@@ -1,6 +1,6 @@
 import { Logo } from "../../ui/logo";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useNavigationContext } from "@/context/navigation.context";
 
@@ -45,8 +45,8 @@ const DesktopNav = ({
                     <li key={item.key}>
                         <button
                             onClick={() => onNavClick(item.key)}
-                            className={`relative px-5 h-20 flex items-center font-roboto text-lg font-light tracking-wide transition-colors duration-300 ${
-                                isActive ? "text-amber-400" : "text-white/40 hover:text-white"
+                            className={`relative px-5 h-20 flex items-center font-roboto text-lg font-medium tracking-wide transition-colors duration-300 [text-shadow:0_1px_3px_rgba(0,0,0,0.6)] ${
+                                isActive ? "text-amber-400" : "text-white/90 hover:text-white"
                             }`}
                         >
                             {isActive && (
@@ -141,6 +141,14 @@ export const LandingNav = () => {
     const { refs, scrollToSection } = useNavigationContext();
     const [show, setIsShow] = useState(false);
     const [activeTab, setActiveTab] = useState<RefKey>("heroRef");
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 20);
+        handleScroll();
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     const handleNavClick = (key: RefKey) => {
         setActiveTab(key);
@@ -150,7 +158,13 @@ export const LandingNav = () => {
 
     return (
         <>
-            <nav className="bg-black/80 backdrop-blur-lg text-white fixed top-0 left-0 right-0 z-50 border-b border-white/[0.07]">
+            <nav
+                className={`text-white fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+                    scrolled
+                        ? "bg-black/80 backdrop-blur-lg border-b border-white/[0.07]"
+                        : "bg-transparent border-b border-transparent"
+                }`}
+            >
                 <div className="w-[90%] max-w-7xl mx-auto h-20 flex items-center justify-between">
                     <Logo />
                     <DesktopNav activeTab={activeTab} onNavClick={handleNavClick} />

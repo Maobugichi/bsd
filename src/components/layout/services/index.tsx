@@ -30,7 +30,7 @@ export const Feature = () => {
 
                     <Header
                         level={2}
-                        className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
+                        className="font-manrope text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
                     >
                         <span className="block whitespace-nowrap">Built on Expertise.</span>
                         <span className="block whitespace-nowrap text-amber-400">Delivered with Precision.</span>

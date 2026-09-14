@@ -22,8 +22,8 @@ export const ListItem = ({ activeTab, onNavClick }: ListItemProps) => (
                 <li key={item.key}>
                     <button
                         onClick={() => onNavClick(item.key)}
-                        className={`relative px-5 h-20 flex items-center font-roboto text-sm font-bold tracking-wide transition-colors duration-300 ${
-                            isActive ? "text-amber-400" : "text-white/50 hover:text-white"
+                        className={`relative px-5 h-20 flex items-center font-roboto text-sm font-semibold tracking-wide transition-colors duration-300 [text-shadow:0_1px_3px_rgba(0,0,0,0.6)] ${
+                            isActive ? "text-amber-400" : "text-red-500"
                         }`}
                     >
                         {isActive && (

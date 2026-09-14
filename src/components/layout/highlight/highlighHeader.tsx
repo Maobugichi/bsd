@@ -16,7 +16,7 @@ export const HighlightHeader = () => {
             <ShimmerBadge text="Achievements" icon={TrendingUp} width="w-40" />
             <Header
                 level={2}
-                className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-[#1c1c1c] leading-tight"
+                className="font-manrope text-3xl md:text-4xl lg:text-5xl font-bold text-[#1c1c1c] leading-tight"
             >
                 <span className="block whitespace-nowrap">Built on Trust.</span>
                 <span className="block whitespace-nowrap text-amber-500">Proven by Numbers.</span>

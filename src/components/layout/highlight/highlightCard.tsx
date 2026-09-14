@@ -35,7 +35,7 @@ const Content = ({ title, desc }: Pick<HighlightItem, "title" | "desc">) => (
         <h3 className="font-montserrat text-xl md:text-5xl font-bold text-[#1c1c1c] group-hover:text-amber-600 transition-colors duration-300 leading-tight md:leading-none">
             {title}
         </h3>
-        <p className="font-roboto text-xs md:text-base text-stone-500 leading-relaxed mt-1 md:max-w-xl">
+        <p className="font-roboto text-md md:text-lg text-stone-500 leading-relaxed mt-1 md:max-w-xl">
             {desc}
         </p>
     </div>

@@ -23,16 +23,16 @@ type HeroContentProps = {
 };
 
 export const HeroContent = ({
-    paragraphContent = "BSD Light partners with developers, architects, and visionaries who refuse to compromise. Precision engineering. Global reach. Zero excuses.",
+    paragraphContent = "Precision construction and engineering for ambitious projects — delivered without compromise.",
 }: HeroContentProps) => {
     const { featureRef, scrollToSection } = useHeroContext();
 
     return (
-        <div className="w-full px-5 md:px-0 mx-auto md:w-[80%] lg:w-[70%] xl:w-[75%] text-white flex flex-col items-center gap-8 md:gap-5 pt- md:pt-28 pb-8">
+        <div className="w-full px-5 md:px-0 mx-auto md:w-[80%] lg:w-[70%] xl:w-[75%] text-white flex flex-col justify-end items-start gap-8 md:gap-4  pt-30 h-[80vh] md:h-[100vh] pb-8">
             <HeroHeading />
             <Paragraph
                 content={paragraphContent}
-                className="text-center text-white/70 md:max-w-xl md:w-[80%]"
+                className="text-left text-white/70"
             />
             <Cta ref={featureRef} onClick={() => scrollToSection(featureRef)} />
         </div>

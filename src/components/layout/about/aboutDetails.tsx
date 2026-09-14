@@ -19,7 +19,7 @@ export const AboutDetails = () => {
 
                 <Header
                     level={2}
-                    className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-[#1c1c1c] leading-tight"
+                    className="font-manrope text-3xl md:text-4xl lg:text-5xl font-bold text-[#1c1c1c] leading-tight"
                 >
                     <span className="block whitespace-nowrap">Building Bold Ideas</span>
                     <span className="block whitespace-nowrap text-amber-500">Into Lasting Landmarks.</span>

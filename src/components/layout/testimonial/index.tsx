@@ -26,7 +26,7 @@ export const Testimonial = () => {
                     <ShimmerBadge text="Reviews" icon={MessageCircle} width="w-32" />
                     <Header
                         level={2}
-                        className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mt-3"
+                        className="font-manrope text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mt-3"
                     >
                         <span className="block whitespace-nowrap">Trust is Built</span>
                         <span className="block whitespace-nowrap text-amber-500">With Consistency.</span>
