@@ -4,28 +4,13 @@ interface IndicatorsProps {
   goToSlide: (index: number) => void;
 }
 
-export const SlideIndicators = ({ slides, currentSlide, goToSlide }: IndicatorsProps) => {
+export const SlideIndicators = ({ slides, currentSlide }: IndicatorsProps) => {
   return (
-    <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-1.5 sm:gap-2 px-4">
-      {slides.map((_, index) => (
-        <button
-          key={index}
-          onClick={() => goToSlide(index)}
-          className="py-3 group focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full"
-          aria-label={`Go to slide ${index + 1}`}
-          aria-current={index === currentSlide ? 'true' : 'false'}
-        >
-          <span
-            className={`
-              block h-[3px] rounded-full transition-all duration-300 ease-out
-              ${index === currentSlide
-                ? 'bg-white w-8 sm:w-10'
-                : 'bg-white/40 w-4 sm:w-5 group-hover:bg-white/60'
-              }
-            `}
-          />
-        </button>
-      ))}
+    <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 w-24 sm:w-32 h-[2px] bg-white/25 rounded-full overflow-hidden">
+      <div
+        className="absolute inset-y-0 left-0 bg-white rounded-full transition-all duration-300 ease-out"
+        style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
+      />
     </div>
   )
 }

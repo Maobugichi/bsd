@@ -28,7 +28,7 @@ export const HeroContent = ({
     const { featureRef, scrollToSection } = useHeroContext();
 
     return (
-        <div className="w-full px-5 md:px-0 mx-auto md:w-[80%] lg:w-[70%] xl:w-[75%] text-white flex flex-col justify-end items-start gap-8 md:gap-4  pt-30 h-[80vh] md:h-[100vh] pb-8">
+        <div className="w-full px-5 md:px-0 mx-auto md:w-[80%] lg:w-[70%] xl:w-[75%] text-white flex flex-col justify-end items-start gap-4  pt-30 h-[80vh] md:h-[100vh] pb-8">
             <HeroHeading />
             <Paragraph
                 content={paragraphContent}

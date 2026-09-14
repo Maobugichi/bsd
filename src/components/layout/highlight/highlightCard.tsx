@@ -62,7 +62,7 @@ export const HighlightCard = () => (
                     className="group py-5 md:py-8 cursor-pointer transition-all duration-300 hover:translate-x-1 md:hover:translate-x-2"
                 >
                    
-                    <div className="flex flex-col gap-3 md:hidden">
+                    <div className="flex flex-col gap-4 md:hidden">
                         <div className="flex items-center justify-between">
                             <Metric metric={metric} unit={unit} />
                             <IconBadge Icon={Icon} />
